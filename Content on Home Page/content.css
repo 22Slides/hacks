@@ -1,13 +1,6 @@
 /* Home Page Content */
-
-#page-index #content {
-
-	position: relative;
-
-	}
-	
+#page-index #content { position: relative; }
 #intro {
-
 	position: absolute;
 	bottom: 40px;
 	right: 40px;
@@ -16,12 +9,8 @@
 	background: rgba(0,0,0,.7);
 	color: #fff;
 	width: 450px;
-	
 	}
-	
 #intro h1, #intro h2, #intro h3, #intro h4 {
-
 	font-size: 18px;
 	margin-bottom: 10px;
-
 	}

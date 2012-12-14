@@ -1,22 +1,19 @@
 /* Translucent Sidebar */
-
+/* Lets sideways scrolling galleries scroll behind the sidebar */
 .left header {
 	position: absolute;
 	top: 0;
 	left: 0;
 	}
-	
 .left #content {
 	margin-left: 0;
 	max-width: 80% !important;
 	width: 80%;
 	}
-	
 .left #content .images {
 	padding-left: 20%;
 	z-index: 2;
 	}
-	
 .left footer {
 	z-index: 0;
 	}
