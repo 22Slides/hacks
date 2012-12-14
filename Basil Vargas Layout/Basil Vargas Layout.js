@@ -1,15 +1,3 @@
-/* CSS */
-.left { overflow-y: hidden; }
-.left #content { margin: 0; max-width: 100% !important; clear: both; float: left; width: 100%; }
-.sidescroll .images li { vertical-align: top; }
-.sidescroll .images img { max-height: 94%; }
-.left header { width: 100%; height: 100px !important; position: static; }
-.left nav li { clear: none; margin: 0; margin-left: 20px; }
-.left footer { width: 90% !important; padding: 0 5% 7px !important; }
-footer br { display: none; }
-
-/* Javascript */
-
 rsn.resizeLayout = function() {
 	
 	var windowHeight = ($.browser.msie ? document.documentElement.clientHeight : window.innerHeight);
