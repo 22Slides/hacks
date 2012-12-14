@@ -1,0 +1,1 @@
+slideshowDelay = 2000;

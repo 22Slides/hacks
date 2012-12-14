@@ -1,0 +1,6 @@
+@media (-webkit-min-device-pixel-ratio: 2) {
+	h1 a {
+		background-image: url('THE_URL_TO_YOUR_HIGHRES_LOGO');
+		background-size: 100% auto;
+	}
+}

@@ -1,0 +1,68 @@
+/* Videos
+------------------------------------------------- */
+
+
+	iframe {
+	
+		width: 680px;
+		height: 383px
+		
+		}
+
+	.pagevideos {
+	
+		float: left;
+		padding: 108px 0 0 0; 
+		white-space:nowrap;
+
+		}
+	
+	.pagevideos li {
+	
+		display: inline-block;
+		margin: 0 80px 0 0;
+		max-height: 100%;
+		position: relative;
+		vertical-align: middle;
+	
+		}
+	
+
+/* Custom Scroll Bars */
+
+
+	.horz_video_page,
+	.horz_video_page #layout {
+	
+		height: 100%;
+	
+		}
+		
+	.horz_video_page #content {
+	
+		overflow: auto;
+		height: 98%;
+	
+		}
+		
+	.horz_video_page #content::-webkit-scrollbar {
+		
+		height: 12px;
+		margin-bottom: 10px;
+		
+		}
+		
+	.horz_video_page #content::-webkit-scrollbar-thumb:horizontal {
+	
+		border: 2px solid rgba(255,255,255,.2);
+		border-radius: 10px;
+		background-color: rgba(0,0,0,.2);
+		-webkit-background-clip: padding-box;
+				
+		}
+		
+	.horz_video_page #content::-webkit-scrollbar-thumb:horizontal:hover {
+
+		background-color: rgba(0,0,0,.5);
+
+		}

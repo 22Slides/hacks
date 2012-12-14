@@ -1,0 +1,2 @@
+/* Align images to the top rather than center */
+.sidescroll .images li { vertical-align: top; padding-top: 5px; }

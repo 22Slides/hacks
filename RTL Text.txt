@@ -1,0 +1,3 @@
+<bdo dir="rtl">
+Text goes here
+</bdo>

@@ -1,0 +1,12 @@
+/* Kill home page image scaling */
+#billboard img {
+width: 1000px !important;
+height: auto !important;
+left: 250px !important;
+top: 50px !important;
+}
+
+/* Give home page white background to match the rest of the site */
+#page-index {
+background: #fff !important;
+}

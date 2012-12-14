@@ -1,0 +1,25 @@
+</style><link rel="stylesheet" href="/custom/jquery-ui.css"><style>
+
+#content form label {
+
+	width: auto;
+	clear: none;
+	margin-right: 10px;
+	padding: 10px 0;
+
+	}
+	
+input[type=text],
+input[type=email],
+select,
+textarea {
+
+	font: normal 14px/16px Helvetica, Arial, sans-serif;
+
+	}
+	
+form br {
+
+	clear: left;
+
+	}

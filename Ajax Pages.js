@@ -1,0 +1,23 @@
+$(document).ready(function() {
+
+	// Add music player
+	$('footer').prepend('<iframe width="150" height="450" style="position: relative; display: block; width: 150px; height: 450px;" src="http://bandcamp.com/EmbeddedPlayer/v=2/album=1935940416/size=tall2/bgcol=FFFFFF/linkcol=000000/transparent=true/" allowtransparency="true" frameborder="0"><a href="http://thedivergence.bandcamp.com/album/no-words">No Words by The Divergence</a></iframe>');
+
+	// Load pages with ajax
+	$('nav a').click(function() {
+	
+		var href = $(this).attr('href');
+		var page = href.replace(/\//, '');
+		
+		$('body').removeClass('bleed').attr('id', 'page-' + page);
+		
+		$('#content').load(href + ' #content > *', function() {
+		
+		
+		});
+		
+		return false;
+	
+	});
+
+});

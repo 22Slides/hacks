@@ -1,0 +1,1 @@
+$('#page-about .body > p:first-child').appendTo('#sidebar').css({ 'margin-top': '20px' });

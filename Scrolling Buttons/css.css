@@ -1,0 +1,5 @@
+/* Sideways scrolling nav buttons */
+
+.left #content .images { overflow: hidden; }
+.arrow-back { cursor: url('http://mikedomek.22slides.com/content/1445_image_27363.png') 2 41, pointer; }
+.arrow-next { cursor: url('http://mikedomek.22slides.com/content/1445_image_27364.png') 42 41, pointer; }

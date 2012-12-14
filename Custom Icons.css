@@ -1,0 +1,27 @@
+/* Custom Icons */
+
+.links {
+width: 260px;
+height: 22px;
+margin: 0 0 15px 0;
+}
+
+.links li { clear: none !important; }
+
+.links a {
+display: block;
+text-indent: -5000px;
+overflow: hidden;
+width: 22px;
+height: 22px;
+margin: 0 -2px;
+}
+
+.links a[href*=twitter] { background: url('../images/icons/2/twitter.png'); }
+.links a[href*=facebook] { background: url('../images/icons/2/facebook.png'); }
+.links a[href*=linkedin] { background: url('../images/icons/2/linkedin.png'); }
+.links a[href*=last] { background: url('../images/icons/2/lastfm.png'); }
+.links a[href*=youtube] { background: url('../images/icons/2/youtube.png'); }
+.links a[href*=vimeo] { background: url('../images/icons/2/vimeo.png'); }
+.links a[href*=flickr] { background: url('../images/icons/2/flickr.png'); }
+.links a[href*=about] { background: url('../images/icons/2/aboutme.png'); }
