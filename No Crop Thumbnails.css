@@ -1,24 +1,12 @@
-/* No cropping thumbnails */
-
-.grid li a {
-
-	height: 240px;
-	line-height: 240px;
-
-	}
-	
-.grid img {
-
-	display: inline;
-	width: 100%;
-	height: auto;
-	vertical-align: middle;
-
-	}
-	
-.grid img.portrait {
-
-	height: 100%;
-	width: auto;
-
-	}
+/* STOP CROPPING THUMBNAILS */
+	.grid li a {
+		height: 240px;
+		line-height: 240px; }
+	.grid img {
+		display: inline;
+		width: 100%;
+		height: auto;
+		vertical-align: middle; }
+	.grid img.portrait {
+		height: 100%;
+		width: auto; }

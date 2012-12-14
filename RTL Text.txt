@@ -1,3 +1,4 @@
+<!-- This goes in a text/html page -->
 <bdo dir="rtl">
 Text goes here
 </bdo>
