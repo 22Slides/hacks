@@ -1,2 +1,4 @@
 /* Automatically forward to different page */
-if (page == "index") window.location = "/page-name-here";
+$(document).ready(function() {
+	if (page == "index") window.location = "/page-name-here";
+});
