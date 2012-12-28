@@ -1,0 +1,2 @@
+/* Hide Flickr image titles */
+#overlay.flickr .info { display: none; }
