@@ -1,4 +1,4 @@
-/* Horizontal Scrolling */
+/* Change list-style galleries to sideways-scrolling */
 $(document).ready(function() {
 	if ($('.list .images').length > 0) $('body').addClass('horz');
 	var scrollSpeed = (navigator.appVersion.indexOf('Mac') != -1 ? 25 : 70);

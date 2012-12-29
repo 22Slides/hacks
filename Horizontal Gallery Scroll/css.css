@@ -1,19 +1,16 @@
-/* Horizontal Scrolling */
+/* Change list-style galleries to sideways-scrolling */
 body.horz .images {
-float: none;
-white-space: nowrap;
-width: auto;
-height: 650px;
-overflow: auto;
-}
+	float: none;
+	white-space: nowrap;
+	width: auto;
+	height: 650px;
+	overflow: auto; }
 body.horz .list .images li {
-float: none;
-width: auto;
-height: 95%;
-display: inline-block;
-margin: 0 10px;
-}
+	float: none;
+	width: auto;
+	height: 95%;
+	display: inline-block;
+	margin: 0 10px; }
 body.horz .list .images img {
-margin: 0;
-max-height: 100%;
-}	
+	margin: 0;
+	max-height: 100%; }	
