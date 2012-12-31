@@ -1,0 +1,19 @@
+// Single custom font
+custom_fonts = [
+	{ 
+		name: "Grand Hotel",
+		source: "<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>"
+	}
+];
+
+// Multiple custom fonts
+custom_fonts = [
+	{ 
+		name: "Grand Hotel",
+		source: "<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>"
+	},
+	{ 
+		name: "Droid Sans Mono",
+		source: "<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>"
+	}
+];
