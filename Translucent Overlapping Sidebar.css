@@ -1,0 +1,14 @@
+/* Translucent, overlapping sidebar */
+.left header {
+	position: fixed;
+	top: 0;
+	left: 0; }
+.left #content {
+	margin-left: 0;
+	max-width: 80% !important;
+	width: 80% !important; }
+.left #content #main { margin-left: 250px; }
+.left #content .images,
+.left #content #posts {
+	padding-left: 280px;
+	z-index: 2; }
