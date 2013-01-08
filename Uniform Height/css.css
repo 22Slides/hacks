@@ -1,3 +1,0 @@
-/* Force images to be same height (Doesn't work properly yet due to webkit bug!) */
-.sidescroll .images li { max-width: none; }
-.sidescroll .images img { max-width: none; height: 600px; }
