@@ -1,0 +1,14 @@
+/* Horizontal scrollbar style */
+.images::-webkit-scrollbar,.thumbs::-webkit-scrollbar {
+	height: 12px;
+	margin-bottom: 10px;
+	}
+.images::-webkit-scrollbar-thumb:horizontal, .thumbs::-webkit-scrollbar-thumb:horizontal {
+	border: 2px solid rgba(255,255,255,.2);
+	border-radius: 10px;
+	background-color: rgba(0,0,0,.2);
+	}
+.images::-webkit-scrollbar-thumb:horizontal:hover, .thumbs::-webkit-scrollbar-thumb:horizontal:hover {
+	background-color: rgba(0,0,0,.5);
+	}
+	
