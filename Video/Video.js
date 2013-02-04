@@ -5,5 +5,3 @@ $(document).ready(function() {
 		$(this).find('div').remove();
 	});
 });
-
-.images iframe { float: left; max-height: 96%; max-width: 100%; }

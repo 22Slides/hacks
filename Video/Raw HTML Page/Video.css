@@ -1,0 +1,67 @@
+/* Videos */		
+
+	#page-work .html > iframe { display: none; }
+	
+	.video .html {
+		width: 800px !important;
+		padding: 40px 20px;
+		}
+
+	.hide { display: none; }
+
+	a.video {
+		width: 240px;
+		height: 135px;
+		overflow: hidden;
+		float: left;
+		margin: 0 10px 10px 0;
+		border: none;
+		opacity: .8;
+		filter: alpha(opacity=80);		
+		}
+		
+	a.video:hover {
+		opacity: 1;
+		filter: alpha(opacity=100);
+		}
+		
+	a.video img {
+		width: 100%;
+		}
+
+	a.video iframe { display: none; }
+		
+	#overlay .video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 640px;
+		height: 400px;
+		border: 20px solid #000;
+		background: #000;
+		margin: -220px 0 0 -340px;
+		}
+		
+	#overlay .close {
+		display: block;
+		position: absolute;
+		top: -40px;
+		right: -40px;
+		text-indent: -5000px;
+		overflow: hidden;
+		width: 40px;
+		height: 40px;
+		opacity: .7;
+		filter: alpha(opacity=70);
+		background: url('/images/a-close-circled.png') center center no-repeat;
+		}
+		
+	#overlay .close:hover {
+		opacity: 1;
+		filter: alpha(opacity=100);
+		}
+
+	#overlay iframe {
+		width: 640px;
+		height: 400px;
+		}
