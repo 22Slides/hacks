@@ -1,0 +1,1 @@
+rsn.wrapText('text-page, another-text-page');

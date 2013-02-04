@@ -1,0 +1,10 @@
+/* Change horizontal scrollbar color */
+.images::-webkit-scrollbar-thumb:horizontal,
+.thumbs::-webkit-scrollbar-thumb:horizontal {
+	background-color: #red;
+	}
+/* Change horizontal scrollbar size */	
+.images::-webkit-scrollbar,
+.thumbs::-webkit-scrollbar {
+	height: 40px;
+	}
