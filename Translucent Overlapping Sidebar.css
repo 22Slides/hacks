@@ -7,8 +7,8 @@
 	margin-left: 0;
 	max-width: 80% !important;
 	width: 80% !important; }
-.left #content #main { margin-left: 250px; }
+.left #content #main, .left #content .grid { margin-left: 250px; }
 .left #content .images,
 .left #content #posts {
-	padding-left: 280px;
+	padding-left: 250px;
 	z-index: 2; }

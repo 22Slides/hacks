@@ -1,0 +1,13 @@
+// Full screen mode
+$('a[href$="fullscreen"]').click(function(event) {
+	event.preventDefault();
+	event.stopPropagation();
+	var element = $('html')[0];
+	if (element.requestFullscreen) {
+		element.requestFullscreen();
+	} else if (element.webkitRequestFullScreen) {
+		element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+	} else if (element.mozRequestFullScreen) {
+		element.mozRequestFullScreen();
+	}
+});
