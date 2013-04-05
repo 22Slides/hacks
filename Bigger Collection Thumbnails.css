@@ -1,0 +1,5 @@
+/* Larger collection thumbnails */
+.index .grid li a {
+	height: 200px;
+	line-height: 200px;
+	}
