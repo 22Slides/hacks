@@ -1,0 +1,3 @@
+/* Center-align navigation in sidebar */
+.left nav li { float: none; }
+.left nav a { text-align: center; }

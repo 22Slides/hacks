@@ -1,0 +1,107 @@
+/* Layout
+---------------------------------- */
+
+
+	body {
+	
+		padding-top: 65px;
+		
+		}
+
+	header {
+	
+		padding-top: 5px;
+	
+		}
+		
+	header h1 {
+	
+		margin: 0 auto;
+		width: 120px;
+		height: 46px;
+		text-indent: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		background: url('http://cameronrad.com/content/82_image_36047.png') center center no-repeat;
+		background-size: 100% auto;
+	
+		}
+		
+	.back {
+	
+		margin-top: 13px;
+	
+		}
+				
+	#billboard {
+			
+		display: none;
+		
+		}
+		
+	
+/* Fonts
+---------------------------------- */
+
+
+	@font-face {
+				
+		font-family: "Raleway";
+		src: url('/fonts/raleway.eot');
+		src: local('â˜º'), url('/fonts/raleway.woff') format('woff'), url('/fonts/raleway.ttf') format('truetype'), url('/fonts/raleway.svg#raleway') format('svg');
+		
+		}
+		
+
+/* Colors
+---------------------------------- */					
+
+
+	body {
+	
+		-webkit-tap-highlight-color: rgba(0,0,0,1);	
+	
+		}
+		
+	header {
+	
+		background: #ccc;
+	
+		}
+		
+	body, .menu {
+	
+		background: #fff;
+	
+		}
+	
+	body {
+	
+		color: #000;
+		
+		}
+		
+	a {
+	
+		color: #000;
+	
+		}
+		
+	.menu a {
+	
+		font: normal 24px/1em Raleway, Arial, sans-serif;
+		border-color: #ccc;
+	
+		}
+	
+	h2 {
+	
+		text-shadow: none;
+	
+		}
+		
+	#fullsite {
+	
+		color: #fff;
+		
+		}
