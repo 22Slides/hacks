@@ -14,3 +14,8 @@
 .thumbs::-webkit-scrollbar {
 	height: 40px;
 	}
+/* Change horizontal scrollbar track */
+::-webkit-scrollbar-track:horizontal,
+::-webkit-scrollbar-track:horizontal {
+	background: #ccc;
+	}
