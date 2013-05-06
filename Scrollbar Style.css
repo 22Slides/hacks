@@ -1,21 +1,17 @@
 /* Change horizontal scrollbar color */
-.images::-webkit-scrollbar-thumb:horizontal,
-.thumbs::-webkit-scrollbar-thumb:horizontal {
+::-webkit-scrollbar-thumb:horizontal {
 	border: 2px solid rgba(255,255,255, .2);
 	background-color: rgba(0,0,0, .2);
 	}
 /* Change horizontal scrollbar color on hover */	
-.images::-webkit-scrollbar-thumb:horizontal:hover,	
-.thumbs::-webkit-scrollbar-thumb:horizontal:hover {
+::-webkit-scrollbar-thumb:horizontal:hover {
 	background-color: rgba(0,0,0, .5);
 	}		
 /* Change horizontal scrollbar size */	
-.images::-webkit-scrollbar,
-.thumbs::-webkit-scrollbar {
+::-webkit-scrollbar {
 	height: 40px;
 	}
 /* Change horizontal scrollbar track */
-::-webkit-scrollbar-track:horizontal,
 ::-webkit-scrollbar-track:horizontal {
 	background: #ccc;
 	}
