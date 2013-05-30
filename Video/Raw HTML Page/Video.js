@@ -1,11 +1,10 @@
+/* Video Page */
 $(document).ready(function() {
-
-	var video_page = "work";
-
+	var video_page = "video";
 	/* Find video page */
 	var video_page = "#page-" + video_page;
+	console.log(video_page);
 	$(video_page).addClass('video');
-	
 	/* Convert embed codes to thumbnails */
 	$('.video .html iframe').each(function() {
 		var $this = $(this);
@@ -25,7 +24,6 @@ $(document).ready(function() {
 				jsonp: 'callback',
 				dataType: 'jsonp',
 				success: function(data) {
-					console.log(data);
 					var thumbnail = data[0].thumbnail_medium;
 					$this.wrap('<a class="video hide" href="#" class="video"></a>');
 					$this.before('<img src="' + thumbnail + '" alt="">');
@@ -35,7 +33,6 @@ $(document).ready(function() {
 			});
 		}
 	});
-	
 	/* Thumbnail clicks */
 	$('a.video').live('click', function() {
 		var $embed = $($(this).children('.embed').html());
@@ -45,14 +42,10 @@ $(document).ready(function() {
 		setTimeout(function() { $('#overlay, #overlay > div').addClass('show'); }, 1);
 		return false;
 	});
-	
 	/* Overlay close */
-	$('#overlay, #overlay div').live('click', function() {
+	$('#overlay .close').live('click', function() {
 		$('#overlay').removeClass('show');
 		setTimeout(function() { $('#overlay').remove(); }, 250);
 		return false;
 	});
-	
 });
-	
-	
