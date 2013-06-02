@@ -1,0 +1,7 @@
+/* Responsive Sidebar */
+@media (max-height: 700px) {
+	header h1 a { height: 100px; background-size: contain; }
+	.left nav { top: 135px; }
+	nav a { font-size: 12px; }
+	footer .links, footer iframe, nav .spacer { display: none; }
+}
