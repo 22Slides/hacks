@@ -1,0 +1,2 @@
+/* Add border to entire website */
+$('body').prepend('<div class="border" id="border-top"></div><div class="border" id="border-right"></div><div class="border" id="border-bottom"></div><div class="border" id="border-left"></div>');
