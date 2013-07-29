@@ -1,0 +1,15 @@
+/* Grid layout for Tumblr blog */
+/* Not complete! Doesn't work yet */
+.left #posts.grid { margin-left: 5%; }
+.left #posts.grid .post {
+	float: left;
+	border: none;
+	margin: 0 20px 10px 0;
+	padding: 0; }
+.left .grid .post img {
+	height: 150px;
+	-webkit-transition: opacity .15s ease-out;
+	-moz-transition: opacity .15s ease-out;
+	transition: opacity .15s ease-out; }
+.left .grid .post img:hover { opacity: .9; }	
+.left .grid .post > strong, .post .body { display: none; }
