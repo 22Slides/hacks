@@ -1,8 +1,8 @@
 /* Video Page */	
-.video .html {
+.videos {
 	width: 800px !important;
 	padding: 40px 20px; }
-.video .html iframe, .hide { display: none; }
+.videos iframe { display: none; }
 a.video {
 	width: 240px;
 	height: 135px;

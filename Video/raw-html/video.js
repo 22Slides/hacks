@@ -1,21 +1,15 @@
 /* Video Page */
 $(document).ready(function() {
-	var video_page = "video";
-	/* Find video page */
-	var video_page = "#page-" + video_page;
-	console.log(video_page);
-	$(video_page).addClass('video');
 	/* Convert embed codes to thumbnails */
-	$('.video .html iframe').each(function() {
+	$('.videos iframe').each(function() {
 		var $this = $(this);
 		var src = $(this).attr('src');
 		var id = src.split('/').pop();
 		if (src.match(/youtube/i)) {
 			var thumbnail = "http://img.youtube.com/vi/" + id + "/mqdefault.jpg";
-			$this.wrap('<a class="video hide" href="#" class="video"></a>');
+			$this.wrap('<a class="video" href="#" class="video"></a>');
 			$this.before('<img src="' + thumbnail + '" alt="">');
 			$this.wrap('<div class="embed"></div>');
-			$this.closest('a').removeClass('hide');
 			$this.attr('src', $this.attr('src'));
 		} else if (src.match(/vimeo/i)) {
 			$.ajax({
@@ -25,16 +19,15 @@ $(document).ready(function() {
 				dataType: 'jsonp',
 				success: function(data) {
 					var thumbnail = data[0].thumbnail_medium;
-					$this.wrap('<a class="video hide" href="#" class="video"></a>');
+					$this.wrap('<a class="video" href="#" class="video"></a>');
 					$this.before('<img src="' + thumbnail + '" alt="">');
 					$this.wrap('<div class="embed"></div>');
-					$this.closest('a').removeClass('hide');
 				}
 			});
 		}
 	});
 	/* Thumbnail clicks */
-	$('a.video').live('click', function() {
+	$(document).on('click', 'a.video', function() {
 		var $embed = $($(this).children('.embed').html());
 		$embed.attr('src', $embed.attr('src') + '?autoplay=1');
 		$('body').append('<div id="overlay"><div class="video"><a class="close" href="#close">Close</a></div></div>');
@@ -43,7 +36,7 @@ $(document).ready(function() {
 		return false;
 	});
 	/* Overlay close */
-	$('#overlay .close').live('click', function() {
+	$(document).on('click', '#overlay .close', function() {
 		$('#overlay').removeClass('show');
 		setTimeout(function() { $('#overlay').remove(); }, 250);
 		return false;
