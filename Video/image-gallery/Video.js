@@ -1,3 +1,4 @@
+/* Videos */
 $(document).ready(function() {
 	$('.images iframe').closest('li').each(function() {
 		$(this).find('img').remove();
