@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$('.videos iframe').each(function() {
 		var $this = $(this);
 		var src = $(this).attr('src');
-		var id = src.split('/').pop();
+		var id = src.split('/').pop().split('?')[0];
 		if (src.match(/youtube/i)) {
 			var thumbnail = "http://img.youtube.com/vi/" + id + "/mqdefault.jpg";
 			$this.wrap('<a class="video" href="#" class="video"></a>');

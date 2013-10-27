@@ -1,5 +1,2 @@
 /* Alternate colors based on background image */
-	/* Logo */
-		.alternate header h1 a { background-image: url('/content/123_image_12345.png'); }
-	/* Navigation */
-		.alternate nav a { color: #fff; }
+.alternate nav a { color: #fff; }
