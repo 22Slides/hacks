@@ -1,0 +1,22 @@
+/* Make sidebar keep aligned with top of sideways-scrolling images */
+	rsn.computedStyles.prototype.responsiveSidebar = function() {
+		// Define elements
+		var $logo = $('header h1 a');
+		var $nav = $('nav');
+		var $image = $('.sidescroll .images > li:first-child img:not(.blocker)');
+		// Collect dimensions
+		var logoTop = $logo.offset().top;
+		var navTop = $nav.offset().top;
+		var imageTop = $image.offset().top;
+		// Calculations
+		var logoNavSpacing = navTop - logoTop;
+		var newLogoTop = imageTop;
+		var newNavTop = newLogoTop + logoNavSpacing;
+		// Move logo/nav
+		$logo.css({ top: newLogoTop + 'px' });
+		$nav.css({ top: newNavTop + 'px' });
+	};
+	$(document).ready(function() {
+		rsn.computedStyles.prototype.responsiveSidebar();
+		$('header').css({ visibility: 'visible' });
+	});
