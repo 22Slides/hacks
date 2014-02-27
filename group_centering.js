@@ -1,0 +1,16 @@
+/* Thumbnail Group Re-Centering */		
+$(document).ready(function() {
+	var $group = $('.layout-header-wide div.group');
+	if ($group.length > 0) {
+		function centerGroup($group) {
+			var groupWidth = $group.width();
+			var itemColumns = Math.floor(groupWidth / itemWidth);
+			var spaceUsed = itemWidth * itemColumns;
+			$group.children('.thumbs').css({ width: spaceUsed + 'px' });
+		}
+		$group.children('.thumbs').css({ float: 'none', margin: '0 auto' });
+		var itemWidth = $group.children('.thumbs').children('li:first-child').outerWidth(true);
+		centerGroup($group, itemWidth);
+		$(window).resize(function() { centerGroup($group, itemWidth) });
+	}
+});
