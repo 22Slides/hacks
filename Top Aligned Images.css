@@ -1,2 +1,3 @@
 /* Align sideways-scrolling images to the top of page rather than center */
-.sidescroll .images li { vertical-align: top; padding-top: 5px; }
+	.sidescroll .images { line-height: 0 !important; }
+	.sidescroll .images li { margin-top: 46px; vertical-align: top; }
