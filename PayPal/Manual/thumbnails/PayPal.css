@@ -1,0 +1,5 @@
+/* Paypal Buttons */
+	#overlay .info { opacity: 1 !important; }
+	#overlay .info .close { display: none; }
+	#overlay form { text-align: center; line-height: 1.3em; margin-bottom: 10px; }
+
