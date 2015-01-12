@@ -1,6 +1,5 @@
+<!-- Sideways-scrolling videos -->
 <style>
-
-/* Videos */
 	.video_wrapper {
 		position: relative !important;
 		padding: 0 !important;
@@ -14,8 +13,6 @@
 		left: 0;
 		width: 100%;
 		height: 100%; }
-		
-/* Move video title/descriptions outside the video and to the bottom */	
 	.left .sidescroll .images li.video div {
 		top: 100%;
 		bottom: auto;
@@ -24,14 +21,9 @@
 		color: #000;
 		padding: 10px 0 0; }
 	.left .sidescroll .images li.video div h4,
-	.left .sidescroll .images li.video div p { color: #888; font-weight: 100; }		
-		
+	.left .sidescroll .images li.video div p { color: #888; font-weight: 100; }			
 </style>
-
-
 <script>
-
-/* Videos */
 	$(document).ready(function() {
 		$('.images iframe').closest('li').each(function() {
 			var $this = $(this);
@@ -44,5 +36,4 @@
 			$video.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="http://placehold.it/' + dimensions + '">');
 		});
 	});
-	
 </script>
