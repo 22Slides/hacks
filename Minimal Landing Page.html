@@ -1,0 +1,18 @@
+<style>
+/* Minimal Landing Page */
+	#page-index header, #page-index footer { display: none !important; }
+	#click-catcher {
+		display: block;
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0; }
+</style>
+
+<script>
+/* Minimal Landing Page */
+	var pageName = "contact";
+	$(document).ready(function() { $('#page-index').append('<a id="click-catcher" href="/' + pageName + '"></a>'); });
+</script>
