@@ -1,0 +1,60 @@
+<!-- PayPal Button
+Usage: Put this in the description of your images
+{{
+Option Name: $19.95
+Another Option: $50
+}}
+-->
+<script>
+var paypal_id = "money@resen.co"; // <-- Change this
+$(document).ready(function() {
+	var optionsPattern = /\{\{([\S\s].[\S\s]*?)\}\}/;
+	$('.images > li, .thumbs > li').each(function() {
+		var $this = $(this);
+		try {
+			if ($this.find('.description').text().match(optionsPattern)) {
+				var itemTitle = $this.find('h4').text();
+				var $description = $this.find('.description');
+				var itemDescription = $description.text();
+				var itemOptions = itemDescription.match(optionsPattern)[1].trim();
+				var itemOptions = itemOptions.split(/\n|\r/);
+				var itemDescription = itemDescription.replace(optionsPattern, '');
+				$this.find('.description').text(itemDescription);			
+				$this.find('.description').append('<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">\
+					<input type="hidden" name="add" value="1">\
+					<input type="hidden" name="cmd" value="_cart">\
+					<input type="hidden" name="business" value="' + paypal_id + '">\
+					<input type="hidden" name="item_name" value="' + itemTitle + '">\
+					</form>');
+				var $form = $this.find('div form');
+				if (itemOptions.length < 2) {
+					var option = itemOptions[0].split(":");
+					var option = {
+						name: option[0].trim(),
+						price: option[1].trim().replace('$', '')
+					};
+					$form.append('<input type="hidden" name="amount" value="' + option.price + '">');
+					$form.append(' <input type="submit" value="Buy Now - $' + option.price + '">');
+				} else {
+					var $select = $('<select name="os0"></select>');
+					$.each(itemOptions, function(i) {
+						var option = this.split(":");
+						var option = {
+							name: option[0].trim(),
+							price: option[1].trim().replace('$', '')
+						};
+						$select.append('<option value="' + option.name + '">' + option.name + ' - $' + option.price + '</option>');
+						$form.append('<input type="hidden" name="option_select' + i + '" value="' + option.name + '">');
+						$form.append('<input type="hidden" name="option_amount' + i + '" value="' + option.price + '">');
+					});
+					$form.append('<input type="hidden" name="on0" value="Option">');
+					$form.append($select);
+					$form.append(' <input type="submit" value="Buy Now">');
+				}
+			}
+		} catch (error) { }
+	});
+	$('ul.images div:has(form)').css('opacity', 1);
+});
+</script>
+
