@@ -1,62 +1,6 @@
 <script>
-
-function fullScreenVideo(videos) {
-	
-	// Pick random video from the list
-	var video = videos[Math.floor(Math.random() * videos.length)];
-	
-	// Replace content with video
-	$('#billboard').html(video);
-	
-	// Define elements for later
-	var $video = $('#billboard iframe');
-	var $window = $(window);
-	
-	// Handle needed CSS
-	$video.css({ position: "absolute" });
-	
-	// Resizing function
-	function resizeFullscreenVideo() {
-	
-		var windowSize = {
-			width: $window.width(),
-			height: $window.height()
-			};
-		
-		var aspectRatioVideo = $video.width() / $video.height();
-		var aspectRatioWindow = windowSize.width / windowSize.height;
-		
-		if (aspectRatioWindow > aspectRatioVideo) {
-			var newWidth = windowSize.width;
-			var newHeight = newWidth / aspectRatioVideo;
-			var newTop = (newHeight - windowSize.height) / -2;
-			var newLeft = 0;
-		} else {
-			var newHeight = windowSize.height;
-			var newWidth = newHeight * aspectRatioVideo;
-			var newTop = 0;
-			var newLeft = (newWidth - windowSize.width) / -2;
-		}
-		
-		// Apply styles
-		$video.css({
-			width: newWidth + "px",
-			height: newHeight + "px",
-			left: newLeft + "px",
-			top: newTop + "px"
-		});
-		
-	}
-	
-	resizeFullscreenVideo();
-	$(window).resize(resizeFullscreenVideo);
-
-}
-
-/* Full-screen home page video */
-	fullScreenVideo([
+	rsn.fullScreenVideo([
 		'<iframe src="//player.vimeo.com/video/80832646?autoplay=1&loop=1&color=1f3340&title=0&byline=0&portrait=0&controls=0" width="1600" height="900" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
 		'<iframe width="1280" height="720" src="https://www.youtube.com/embed/R2dX6R7VRH8?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>'
 	]);
-
 </script>
