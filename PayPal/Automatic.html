@@ -17,33 +17,44 @@ $(document).ready(function() {
 				var $description = $this.find('.description');
 				var itemDescription = $description.text();
 				var itemOptions = itemDescription.match(optionsPattern)[1].trim();
+				if (itemOptions.match('£')) {
+					var currencySymbol = "£";
+					var currencyCode = "GBP";
+				} else if (itemOptions.match('€')) {
+					var currencySymbol = "€";
+					var currencyCode = "EUR";
+				} else {
+					var currencySymbol = "$";
+					var currencyCode = "USD";
+				}
 				var itemOptions = itemOptions.split(/\n|\r/);
 				var itemDescription = itemDescription.replace(optionsPattern, '');
-				$this.find('.description').text(itemDescription);			
+				$this.find('.description').text(itemDescription);
 				$this.find('.description').append('<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">\
 					<input type="hidden" name="add" value="1">\
 					<input type="hidden" name="cmd" value="_cart">\
 					<input type="hidden" name="business" value="' + paypal_id + '">\
 					<input type="hidden" name="item_name" value="' + itemTitle + '">\
+					<input type="hidden" name="currency_code" value="' + currencyCode + '">\
 					</form>');
 				var $form = $this.find('div form');
 				if (itemOptions.length < 2) {
 					var option = itemOptions[0].split(":");
 					var option = {
 						name: option[0].trim(),
-						price: option[1].trim().replace('$', '')
+						price: option[1].trim().replace(/\$|£|€/, '')
 					};
-					$form.append('<input type="hidden" name="amount" value="' + option.price + '">');
-					$form.append(' <input type="submit" value="Buy Now - $' + option.price + '">');
+					$form.append('<input type="hidden" name="amount" value="' + option.price + '"> ');
+					$form.append('<input type="submit" value="Buy Now - ' + currencySymbol + option.price + '">');
 				} else {
 					var $select = $('<select name="os0"></select>');
 					$.each(itemOptions, function(i) {
 						var option = this.split(":");
 						var option = {
 							name: option[0].trim(),
-							price: option[1].trim().replace('$', '')
+							price: option[1].trim().replace(/\$|£|€/, '')
 						};
-						$select.append('<option value="' + option.name + '">' + option.name + ' - $' + option.price + '</option>');
+						$select.append('<option value="' + option.name + '">' + option.name + ' - ' + currencySymbol + option.price + '</option>');
 						$form.append('<input type="hidden" name="option_select' + i + '" value="' + option.name + '">');
 						$form.append('<input type="hidden" name="option_amount' + i + '" value="' + option.price + '">');
 					});
