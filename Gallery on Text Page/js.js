@@ -1,6 +1,3 @@
-rsn.dropdown();
-slideshowDelay = 2;
-
 // Load gallery page into team page
 $('p:contains("PHOTOS_GO_HERE")').each(function() {
 	$(this).replaceWith('<div class="gallery"></div>');
