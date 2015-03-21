@@ -1,3 +1,0 @@
-/* Make photos scroll behind sidebar */
-.left #content { margin-left: 0; max-width: 100% !important; }
-.left #content .images > li:first-child { margin-left: 280px; }
