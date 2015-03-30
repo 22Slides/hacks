@@ -1,3 +1,0 @@
-/* Hide all image titles and descriptions */
-.images li > div, #overlay .info { display: none !important; }
-

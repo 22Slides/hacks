@@ -1,0 +1,3 @@
+/* Change vertical image spacing */
+.list .images img { margin-bottom: 0; }
+.list .images li { margin-bottom: 10px; }
