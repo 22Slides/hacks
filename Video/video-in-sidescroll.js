@@ -5,7 +5,7 @@
 4. Paste this code into your custom javascript field */
 $('.sidescroll .images > li').each(function() {
 	if ($(this).find('h4').text() == "[Video]") {
-		var embedCode = $(this).find('p').html();
+		var embedCode = $(this).find('.description').html();
 		$(this).find('.blocker, div').remove();
 		$(this).find('img').replaceWith(embedCode);
 		$(this).find('iframe').css({'float': 'left'});
