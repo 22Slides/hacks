@@ -1,4 +1,0 @@
-/* Make lightbox background white */
-	#overlay { background: rgba(255,255,255, .9); }
-	#overlay .next { background-image: url('../images/a-next-lightbox-dark.png'); }
-	#overlay .back { background-image: url('../images/a-back-lightbox-dark.png'); }
