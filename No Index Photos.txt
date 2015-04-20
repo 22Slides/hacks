@@ -1,3 +1,0 @@
-# htaccess
-User-agent: *
-Disallow: /content/
