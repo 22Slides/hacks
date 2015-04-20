@@ -1,0 +1,15 @@
+<script>
+
+/* Force retina resolution for smaller images */
+	$(document).ready(function() {
+		var imageResolution = 2;
+		$('.thumbs img').each(function() {
+			var $this = $(this);
+			var dimensions = $this.data('dimensions').split('x');
+			dimensions[0] /= imageResolution;
+			dimensions[1] /= imageResolution;
+			$this.data('dimensions', dimensions[0] + "x" + dimensions[1]);
+		});
+	});
+
+</script>
