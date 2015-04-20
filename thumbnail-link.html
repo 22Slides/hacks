@@ -1,0 +1,13 @@
+<script>
+
+/* Point image thumbnail to another link */
+	$(document).ready(function() {
+		$('.grid a').each(function() {
+			var description = $(this).find('.description').text();
+			if (description.match(/^http:\/\/(.*)$/)) {
+				$(this).addClass('custom').attr('href', description);
+			}
+		});
+	});
+
+</script>
