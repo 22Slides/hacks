@@ -1,0 +1,13 @@
+<!-- Facebook Comments -->
+<div id="fb-root"></div>
+<script>
+var facebookAppId = "416207581913065";
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=" + facebookAppId;
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+$('#posts.display .post').append('<div class="fb-comments" data-href="' + window.location.href  + '" data-numposts="5"></div>');
+</script>
