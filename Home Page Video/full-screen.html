@@ -1,0 +1,38 @@
+<!--
+Full-Screen Home Page Video
+- Place this code in your Settings > Custom Code > Body field
+- Replace the value of "var embed" with your embed code
+-->
+<script>
+	$(document).ready(function() {
+		var embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/rHqWG9bDXyE" frameborder="0" allowfullscreen></iframe>';
+		var video = new Object;
+		video.iframe = $(embed);
+		video.width = video.iframe.attr('width');
+		video.height = video.iframe.attr('height');
+		video.aspectRatio = video.width / video.height;
+		var $billboard = $('#billboard');
+		$billboard.hide().find('img').remove();
+		$billboard.append(video.iframe);
+		function resizeHomeVideo(video) {
+			var windowWidth = $(window).width();
+			var windowHeight = $(window).height();
+			var idealWidth = windowHeight * video.aspectRatio;
+			if (windowWidth > idealWidth) {
+				newWidth = windowWidth;
+				newHeight = windowWidth / video.aspectRatio;
+				newLeft = 0;
+				newTop = (newHeight - windowHeight) / -2; 
+			} else {
+				var newHeight = windowHeight;
+				var newWidth = idealWidth;
+				var newLeft = (idealWidth - windowWidth) / -2;
+				var newTop = 0;
+			}
+			video.iframe.css({ position: 'absolute', top: newTop + 'px', left: newLeft + 'px', width: newWidth + 'px', height: newHeight + 'px' });
+		}
+		resizeHomeVideo(video);
+		$(window).resize(function() { resizeHomeVideo(video) });
+		setTimeout(function() { $billboard.show(); }, 100);
+	});
+</script>
