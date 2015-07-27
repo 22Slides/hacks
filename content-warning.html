@@ -1,0 +1,35 @@
+<!-- Content Warning -->
+<style>
+	.content-warning {
+		position: fixed;
+		z-index: 9000;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255,255,255, 1); }
+	.content-warning > div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 500px;
+		text-align: center;
+		border: 5px solid rgba(0,0,0, .15);
+		border-radius: 5px;
+		padding: 20px;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%); }
+</style>
+<script>
+	$(document).ready(function() {
+		$('#page-test').append('<div class="content-warning"><div>\
+			<p>The content of this page contains some nudity and should only be viewed by individuals over the age of 18.</p>\
+			<p><a href="#continue">Continue</a> or <a href="/">Leave</a></p>\
+			</div></div>');
+		$('.content-warning a[href="#continue"]').click(function(e) {
+			e.preventDefault();
+			$('.content-warning').remove();
+		});
+	});
+</script>
