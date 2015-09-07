@@ -26,7 +26,7 @@
 	$(document).ready(function() {
 		var cookieName = "content";
 		var message = "The content of this page contains some nudity and should only be viewed by individuals over the age of 18.";
-		if ($.cookie(cookieName) != "yes") {
+		if (Cookies(cookieName) != "yes") {
 			$('body').append('<div class="content-warning"><div>\
 				<p>' + message + '</p>\
 				<p><a href="#continue">Continue</a> or <a href="/">Leave</a></p>\
@@ -34,7 +34,7 @@
 			$('.content-warning a[href="#continue"]').click(function(e) {
 				e.preventDefault();
 				$('.content-warning').remove();
-				$.cookie(cookieName, 'yes');
+				Cookies(cookieName, 'yes');
 			});
 		}
 	});
