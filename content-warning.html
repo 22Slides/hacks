@@ -21,15 +21,21 @@
 		-moz-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%); }
 </style>
+<script src="/javascripts/js.cookie.js"></script>
 <script>
 	$(document).ready(function() {
-		$('#page-test').append('<div class="content-warning"><div>\
-			<p>The content of this page contains some nudity and should only be viewed by individuals over the age of 18.</p>\
-			<p><a href="#continue">Continue</a> or <a href="/">Leave</a></p>\
-			</div></div>');
-		$('.content-warning a[href="#continue"]').click(function(e) {
-			e.preventDefault();
-			$('.content-warning').remove();
-		});
+		var cookieName = "content";
+		var message = "The content of this page contains some nudity and should only be viewed by individuals over the age of 18.";
+		if ($.cookie(cookieName) != "yes") {
+			$('body').append('<div class="content-warning"><div>\
+				<p>' + message + '</p>\
+				<p><a href="#continue">Continue</a> or <a href="/">Leave</a></p>\
+				</div></div>');
+			$('.content-warning a[href="#continue"]').click(function(e) {
+				e.preventDefault();
+				$('.content-warning').remove();
+				$.cookie(cookieName, 'yes');
+			});
+		}
 	});
 </script>
