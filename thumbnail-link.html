@@ -5,9 +5,9 @@
 		$('.grid a').each(function() {
 			var description = $(this).find('.description').text();
 			if (description.match(/^http:\/\/(.*)$/)) {
-				$(this).addClass('custom').attr('href', description);
+				$(this).unbind('click').addClass('custom').attr('href', description).attr('target', '_blank');
 			}
 		});
 	});
-
+	
 </script>
