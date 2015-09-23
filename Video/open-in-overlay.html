@@ -34,17 +34,17 @@
 <script>
 	$(document).ready(function() {
 		$('.images li').has('iframe').addClass('hasvideo').click(function(e) {
-			e.preventDefault;
+			e.preventDefault();
 			var $embed = $(this).find('iframe').clone();
 			$embed.attr('src', $embed.attr('src') + '?autoplay=1');
 			$('body').append('<div id="overlay"><div class="video"><a class="close" href="#close">Close</a></div></div>');
 			$('#overlay > div').append($embed);
 			setTimeout(function() { $('#overlay, #overlay > div').addClass('show'); }, 1);
 		});
-		$(document).on('click', '#overlay .close', function() {
+		$(document).on('click', '#overlay .close', function(e) {
+			e.preventDefault();
 			$('#overlay').removeClass('show');
 			setTimeout(function() { $('#overlay').remove(); }, 250);
-			return false;
 		});
 	});
 </script>
