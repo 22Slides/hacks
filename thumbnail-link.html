@@ -2,12 +2,12 @@
 
 /* Point image thumbnail to another link */
 	$(document).ready(function() {
-		$('.grid a').each(function() {
+		$('.grid a, .tile a').each(function() {
 			var description = $(this).find('.description').text();
-			if (description.match(/^http:\/\/(.*)$/)) {
-				$(this).unbind('click').addClass('custom').attr('href', description).attr('target', '_blank');
+			if (description.match(/^\s*http:\/\/(.*)$/)) {
+				$(this).addClass('custom').attr('href', description);
 			}
 		});
 	});
-	
+
 </script>
