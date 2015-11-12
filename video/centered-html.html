@@ -1,0 +1,36 @@
+<!-- Centered HTML page videos -->
+<style>
+	#content.video { position: relative; height: 100vh; }
+	#content.video .html {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 75%;}
+	.html iframe {
+		position: absolute;
+		top: 0; 
+		left: 0;
+		width: 100%;
+		height: 100%; }
+	.video_wrapper {
+		margin: 0 auto;
+		position: relative !important;
+		padding: 0 !important; }
+	.ratio {
+		width: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+		visibility: hidden; }		
+</style>
+<script>
+	$(document).ready(function() {
+		$('.html:has(iframe)').each(function() {
+			var $this = $(this);
+			$this.closest('#content').addClass('video');
+			var $video = $this.find('iframe');
+			var dimensions = $video.attr('width') + "x" + $video.attr('height');
+			$video.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="http://placehold.it/' + dimensions + '">');
+		});
+	});
+</script>
