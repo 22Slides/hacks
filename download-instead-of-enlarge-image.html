@@ -1,0 +1,10 @@
+<script>
+/* Go to link in thumbnail description rather than enlarge image */
+	$('.grid li').each(function() {
+		var description = $(this).find('.description').text().trim();
+		if (description.match(/^https:\/\/www\.dropbox/)) {
+			var $anchor = $(this).find('a');
+			$anchor.addClass('custom').prop({ href: description });
+		}
+	});
+</script>
