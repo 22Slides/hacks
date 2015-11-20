@@ -3,7 +3,7 @@
 /* Point image thumbnail to another link */
 	$(document).ready(function() {
 		$('.grid a, .tile a').each(function() {
-			var description = $(this).find('.description').text();
+			var description = $(this).find('.description').text().trim();
 			if (description.match(/^\s*http:\/\/(.*)$/)) {
 				$(this).addClass('custom').attr('href', description);
 			}
