@@ -1,0 +1,22 @@
+<script>
+function discount(discount_amount) {
+	$('input[name^="option_amount"]').not('[data-discounted]').each(function() {
+		var value = $(this).val() * discount_amount;
+		$(this).val(value);
+		$(this).data('discounted', 'true');
+	});
+	$('option').not('[data-discounted]').each(function() {
+		var text = $(this).text();
+		console.log(text);
+		var price = text.match(/(\$|£|€)(\d+\.?\d*)$/);
+		var old_price = price[0];
+		var currency_symbol = price[1];
+		var price = price[2] * discount_amount;
+		var price = price.toFixed(2);
+		var text = text.replace(old_price, currency_symbol + price + " (Normally " + old_price + ")");
+		$(this).html(text);
+		$(this).data('discounted', 'true');
+	});
+}
+discount(.5);
+</script>
