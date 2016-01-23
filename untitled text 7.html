@@ -1,0 +1,87 @@
+<style>
+
+/* Force square thumbnail grid images */
+		
+	.layout-header-wide div.group.grid .thumbs > li,
+	.layout-header-wide div.archive .thumbs > li {
+		width: 350px;
+		margin: 0 35px 10px 0; }
+		
+	.layout-header-wide div.group.grid li .image,
+	.layout-header-wide div.archive li .image {
+		display: block;
+		width: 350px;
+		height: 350px;
+		overflow: hidden;
+		margin-bottom: 20px; }		
+		
+	.group.grid .portrait {
+		width: 100% !important;
+		height: auto !important;
+		margin-top: -25%; }
+		
+	.group.grid .landscape {
+		width: auto !important;
+		height: 100% !important;
+		margin-left: -25%; }
+		
+/* Custom header responsiveness */
+
+	header.small h1 a {
+		top: 52px;
+		left: 0;
+		width: 100%;
+		text-align: center; }
+		
+	header.small nav {
+		top: 100px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		width: 100%; }
+		
+</style>
+
+<script>
+
+/* Add aspect ratio classes to group thumbnails */
+	$(document).ready(function() {
+		$('.group.grid img').each(function() {
+			var $this = $(this);
+			var src = $this.attr('src');
+			$this.wrap('<div class="image"></div>');
+			var imgLoader = new Image();				
+			imgLoader.onload = function(data) {
+				var orientation = (imgLoader.height > imgLoader.width ? "portrait" : "landscape");
+				$this.addClass(orientation);
+			};
+			imgLoader.src = src;
+		});
+	});
+
+/* Custom header responsiveness */
+	$(document).ready(function() {
+		var $logo = $('header h1 a');
+		var $nav = $('nav');
+		var logoLeft = parseInt($logo.css('left'));
+		var logoWidth = parseInt($logo.width());
+		var navWidth = parseInt($nav.width());
+		var navRight = parseInt($nav.css('right'));
+		var padding = 0;
+		var minWidth = logoLeft + logoWidth + navWidth + navRight + padding;
+		function adjustHeader() {
+			var windowWidth = parseInt($(window).width());
+			console.log('minWidth: ' + minWidth);
+			console.log('windowWidth: ' + windowWidth);
+			if (parseInt($(window).width()) < minWidth) {
+				$('header').addClass('small');
+			} else {
+				$('header').removeClass('small');
+			}
+		}
+		adjustHeader();
+		$(window).resize(adjustHeader);
+	});
+	
+</script>
+

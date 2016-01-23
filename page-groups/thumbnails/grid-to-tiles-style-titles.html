@@ -1,0 +1,26 @@
+<style>
+
+/* Change hover effect for thumbnail groups */
+	.left div.group.grid a, .left div.archive a { margin: 0; }
+	.left div.group.grid img, .left div.archive img { display: block; }		
+	.left div.group.grid .details, .left div.archive .details {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(255,255,255,.7);
+		text-align: center;
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: .5s;
+		-webkit-animation-iteration-count: 1;
+		display: none; }
+	.left div.group.grid .details h4, .left div.archive .details h4 {
+		position: absolute;
+		top: 40%;
+		left: 0;
+		right: 0;
+		color: #000; }
+	.left div.group.grid a:hover .details, .left div.archive a:hover .details {	display: block; }	
+	
+</style>
