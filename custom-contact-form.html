@@ -1,0 +1,21 @@
+<form class="contact_form" action="/contact-custom" method="post">
+	<input type="hidden" name="return" value="contact">
+	<input type="text" name="email" class="email">
+	<label class="label-name">
+		<em>Your Name</em>
+		<input type="text" name="message[Name]" size="35">
+	</label>
+	<label class="label-phone">
+		<em>Your Phone</em>
+		<input type="text" name="message[Phone]" size="35">
+	</label>
+	<label class="label-email">
+		<em>Your Email</em>
+		<input type="email" name="message[Email]" autocapitalize="off" size="35">
+	</label>
+	<label class="label-message">
+		<em>Message</em>
+		<textarea cols="50" rows="10" name="message[Message]"></textarea>
+	</label><br>
+	<input type="submit" value="Send Message">
+</form>
