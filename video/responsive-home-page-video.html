@@ -1,0 +1,27 @@
+<!-- Home Page Video -->
+<style>
+	#billboard .ratio {
+		float: none !important;
+		visibility: hidden;
+		width: 100% !important; }
+	#billboard iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%; }
+	#billboard .video_wrapper {
+		position: relative !important;
+		padding: 0 !important;
+		opacity: 1 !important; }
+</style>
+<script>
+	$(document).ready(function() {
+		var $video = $('<iframe src="https://player.vimeo.com/video/156698402?autoplay=1&title=0&byline=0&portrait=0" width="1046" height="590" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');	
+		var $this = $('#billboard');
+		$this.empty().addClass('video').append($video);
+		var dimensions = $video.attr('width') + "x" + $video.attr('height');
+		$video.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="http://placehold.it/' + dimensions + '">');
+	});	
+</script>
+	
