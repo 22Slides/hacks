@@ -1,0 +1,39 @@
+<!-- Videos (Mobile) -->
+<style>
+	.ratio {
+		float: none !important;
+		visibility: hidden; }
+	.images iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%; }
+	.images li.video div {
+		top: 100%;
+		bottom: auto;
+		opacity: 1 !important;
+		background: transparent;
+		color: #000;
+		padding: 10px 0 0; }
+	.video_wrapper {
+		position: relative !important;
+		padding: 0 !important;
+		opacity: 1 !important; }
+</style>
+<script>
+	$(document).ready(function() {
+		$('.images iframe').closest('li').each(function() {
+			var $this = $(this);
+			$this.addClass('video');
+			var $video = $this.find('iframe');
+			$this.find('img').remove();
+			$this.find('iframe').prependTo($this);
+			$this.find('div iframe').remove();
+			var dimensions = $video.attr('width') + "x" + $video.attr('height');
+			$video.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="http://placehold.it/' + dimensions + '">');
+		});
+		$('.images').hide();
+		setTimeout(function() { $('.images').show(); }, 100);
+	});
+</script>
