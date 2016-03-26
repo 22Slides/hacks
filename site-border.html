@@ -1,0 +1,30 @@
+<!-- Add border to entire website -->
+<style>
+	.border {
+		position: fixed;
+		z-index: 90;
+		background: #000; }
+	#border-top {
+		height: 10px;
+		left: 0;
+		top: 0;
+		right: 0; }
+	#border-right {
+		width: 10px;
+		top: 0;
+		right: 0;
+		bottom: 0; }
+	#border-bottom {
+		height: 10px;
+		right: 0;
+		bottom: 0;
+		left: 0; }
+	#border-left {
+		width: 10px;
+		bottom: 0;
+		left: 0;
+		top: 0; }
+</style>
+<script>
+	$('body').prepend('<div class="border" id="border-top"></div><div class="border" id="border-right"></div><div class="border" id="border-bottom"></div><div class="border" id="border-left"></div>');
+</script>
