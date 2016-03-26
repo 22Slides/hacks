@@ -1,6 +1,0 @@
-/* Center footer */
-footer { text-align: center; }
-footer ul { float: none; display: inline-block; }
-footer li { margin: 0 5px 5px; }
-.copyright { float: none; text-align: center; }
-.credit { float: none; display: block; margin: 0 auto 5px; }
