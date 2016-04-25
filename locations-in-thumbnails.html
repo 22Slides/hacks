@@ -1,0 +1,16 @@
+<!-- Locations in page group thumbnails -->
+<style>
+	h4 span {
+		display: block;
+		font-size: .8em;
+		margin: 3px 0; }
+</style>
+<script>
+	$(document).ready(function() {
+		$('.group.tile li h4').each(function() {
+			var $this = $(this);	
+			var html = $this.text().replace(/\((.+)\)$/, "<span>$1</span>");
+			$this.html(html);
+		});
+	});
+</script>
