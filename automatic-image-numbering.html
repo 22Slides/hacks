@@ -1,7 +1,8 @@
 <script>
 /* Automatic numbering of images for client review */
+	var numberedPageName = "gallery-2";
 	$(document).ready(function() {
-		$('.thumbs > li > a').each(function(i) {
+		$('#page-' + numberedPageName + ' .thumbs > li > a').each(function(i) {
 			var $this = $(this);
 			var title = 'Image #' + (i + 1);
 			if ($this.find('h4').length < 1) $this.append('<h4></h4>');
