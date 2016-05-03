@@ -1,0 +1,11 @@
+<script>
+/* Automatic numbering of images for client review */
+	$(document).ready(function() {
+		$('.thumbs > li > a').each(function(i) {
+			var $this = $(this);
+			var title = 'Image #' + (i + 1);
+			if ($this.find('h4').length < 1) $this.append('<h4></h4>');
+			$this.find('h4').html(title);
+		});
+	});
+</script>
