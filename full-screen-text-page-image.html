@@ -1,0 +1,21 @@
+<style>
+/* Custom bio page */	
+	#page-bio { background-size: cover; }
+	.text-fullscreen {
+		float: right;
+		width: 700px;
+		margin: 40px 70px 70px !important;
+		padding: 35px;
+		background: #fff; }
+</style>
+
+<script>
+/* Custom bio page */
+		var page = "bio";
+		var $page = $('#page-' + page);
+		var $textpage = $page.find('.textpage');
+		var image = $textpage.find('#sidebar img').attr('src');
+		$textpage.removeClass('text-centered').addClass('text-fullscreen');
+		$textpage.find('#sidebar').remove();
+		$page.css({ 'background-image': 'url(' + image + ')' });
+</script>
