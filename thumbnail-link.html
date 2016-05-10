@@ -1,13 +1,15 @@
+<!--
+Point image thumbnail to another page
+Paste into your "body" field
+Place link in images' description
+-->
 <script>
-
-/* Point image thumbnail to another link */
 	$(document).ready(function() {
-		$('.grid a, .tile a').each(function() {
+		$('.grid a, .tile a, .block a').each(function() {
 			var description = $(this).find('.description').text().trim();
 			if (description.match(/^\s*http:\/\/(.*)$/)) {
 				$(this).addClass('custom').attr('href', description);
 			}
 		});
 	});
-
 </script>
