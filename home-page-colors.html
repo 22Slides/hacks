@@ -1,0 +1,17 @@
+<style>
+/* Alternate home page colors */
+	#page-index header h1 img { visibility: hidden; }
+	.alternate nav a { color: #fff; }
+</style>
+
+<script>
+/* Alternate home page colors */
+	$(document).ready(function() {
+		$('#page-index').addClass('alternate');		
+		var $logo = $('.alternate header h1 img');
+		var src = "http://m4.22slides.com/joeandjenphoto/alternatelogo-1685969.png";
+		var img = new Image;
+		img.onload = function() { $logo.prop('src', src).css({ visibility: "visible" }); };
+		img.src = src;
+	});
+</script>
