@@ -1,3 +1,5 @@
+<script>
+
 /* Detect image orientation */
 	$(document).ready(function() {
 		$('.images img').not('.blocker').one('load', function() {
@@ -8,3 +10,5 @@
 			}
 		}).each(function() { if (this.complete) { $(this).load(); } });
 	});
+	
+</script>

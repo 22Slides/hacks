@@ -1,2 +1,0 @@
-/* Fix flashing text in Safari */
-	#page-index { -webkit-font-smoothing: antialiased; }

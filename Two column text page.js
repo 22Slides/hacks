@@ -1,2 +1,0 @@
-/* Take the first paragraph from a text page and place it under the photo on the right */
-$('#page-about .body > p:first-child').appendTo('#sidebar').css({ 'margin-top': '20px' });

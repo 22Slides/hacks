@@ -1,3 +1,5 @@
+<script>
+
 /* High-res Flickr Download */
 $('#page-photo-sets .thumbs a').each(function() {
 	var src = $(this).attr('href').replace(/_\w\./, '_o.');
@@ -6,3 +8,4 @@ $('#page-photo-sets .thumbs a').each(function() {
 $('#overlay p a').live('click', function(event) { event.stopPropagation();});
 /* need to find a way to get the secret code for the original file */
 
+</script>
