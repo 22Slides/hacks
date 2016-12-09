@@ -1,0 +1,54 @@
+<style>
+
+/* Custom sideways-scrolling text */
+	.left .sidescroll .text { width: 500px; }
+	.left .sidescroll .text img { display: none; }
+	.left .sidescroll h4 { font-size: 11px; }
+	.left .sidescroll .images li > div {
+		text-align: right;
+		position: static;
+		color: #0c0b0b;
+		background: transparent;
+		padding: 0 25px;
+		opacity: 1;
+		font-size: 11px;
+		line-height: 18px; }
+	hr {
+		display: block;
+		border: none;
+		clear: both;
+		height: 1px;
+		background: rgba(0,0,0, .25); }
+	
+/* Custom tiles text */	
+	#intro-tiles {
+		float: left;
+		width: 400px;
+		padding: 40px 0; }
+	.left #intro-tiles + h2 + div.tile {
+		padding-left: 420px; }
+
+</style>
+
+<script>
+
+$(document).ready(function() {
+
+/* Custom sideways-scrolling text */
+	$('.sidescroll .description').closest('li').addClass('text');
+	
+/* Custom tiles layout text */
+	var customPages = [
+		"on-paper",
+		"another-page-name"
+	];
+	$.each(customPages, function(index, value) {
+		var $first = $('#page-' + value + ' .tile li:first-child');
+		var $intro = $first.find('.description');
+		$intro.prependTo('#content').attr('id', 'intro-tiles');
+		$first.remove();		
+	});
+
+});
+
+</script>
