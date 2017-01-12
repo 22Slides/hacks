@@ -17,3 +17,34 @@
 
 <!-- Splash Page (Body) -->
 <a id="enter" href="/the-big-day">Enter Site</a>
+
+<!-- Mobile Site -->
+<style>
+	#page-index header, #page-index footer { display: none; }
+	#enter {
+		display: none;
+		position: fixed;
+		z-index: 9000;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		text-indent: 100%;
+		overflow: hidden;
+		white-space: nowrap; }
+	#page-index #enter { display: block; }
+	#billboard {
+		width: 100vw;
+		height: 100vh;
+		background-size: cover;
+		background-position: center center; }
+</style>
+<script>
+	$(document).ready(function() {
+		$('body').append('<a id="enter" href="/m/babes-4evr">Enter Site</a>');
+		var $image = $('#billboard img');
+		var img = $image.attr('src');
+		$('#billboard').css({ 'background-image': 'url(' + $image.attr('src') + ')' });
+		$image.remove();
+	});
+</script>
