@@ -13,7 +13,8 @@
 				dimensions[1] = Math.round(maxWidth*dimensions[1]/dimensions[0]);
 				dimensions[0] = maxWidth;
 			}
-			$this.data('dimensions', dimensions[0] + "x" + dimensions[1]);
+			var newDimensions = dimensions[0] + "x" + dimensions[1];
+			$this.data('dimensions', newDimensions);	
 		});
 	});
 
