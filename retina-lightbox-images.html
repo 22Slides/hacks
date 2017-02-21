@@ -2,14 +2,20 @@
 
 /* Force retina resolution for smaller images */
 	$(document).ready(function() {
-		var imageResolution = 2;
+		var imageResolution = 1;
+		var maxWidth = 2000;
 		$('.thumbs img').each(function() {
 			var $this = $(this);
 			var dimensions = $this.data('dimensions').split('x');
 			dimensions[0] /= imageResolution;
 			dimensions[1] /= imageResolution;
+			if (dimensions[0] > maxWidth) {
+				dimensions[1] = maxWidth*dimensions[1]/dimensions[0];
+				dimensions[0] = maxWidth;
+			}
 			$this.data('dimensions', dimensions[0] + "x" + dimensions[1]);
 		});
 	});
+
 
 </script>
