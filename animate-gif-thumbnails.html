@@ -1,0 +1,10 @@
+<script>
+/* Animate GIF Thumbnails */
+	$(document).ready(function() {
+		$('.thumbs img[src$=".gif"]').each(function() {
+			var src = $(this).attr('src');
+			var src = src.replace('-thumb', '');
+			$(this).attr('src', src);
+		});
+	});
+</script>
