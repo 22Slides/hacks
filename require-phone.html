@@ -1,0 +1,8 @@
+<script>
+/* Require phone number in contact form */
+	$(document).ready(function() {
+		var $label = $('.label-phone');
+		$label.find('em').text('Your Phone *');
+		$label.find('input').prop({ 'required': true });
+	});
+</script>
