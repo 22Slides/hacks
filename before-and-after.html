@@ -1,19 +1,16 @@
 <!-- Before/After Slider (Must use vertical-scrolling gallery layout) -->
-<script src="http://22slides.com/assets/custom/twentytwenty/jquery.event.move.js"></script>
-<script src="http://22slides.com/assets/custom/twentytwenty/jquery.twentytwenty.js"></script>
-<link href="http://22slides.com/assets/custom/twentytwenty/twentytwenty.css" rel="stylesheet">
+<script src="http://assets.22slides.com/custom/twentytwenty/js/jquery.event.move.js"></script>
+<script src="http://assets.22slides.com/custom/twentytwenty/js/jquery.twentytwenty.js"></script>
+<link href="http://assets.22slides.com/custom/twentytwenty/css/twentytwenty.css" rel="stylesheet">
 <style>
 	.twentytwenty-container li { position: static !important; }
 	li.before-after {  }
+	body.left #content .list { max-width: 1300px; }
+	.list .images li { width: 100% !important; }
 </style>
 <script>
-	$.expr[":"].contains = $.expr.createPseudo(function(arg) {
-		return function( elem ) {
-			return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-		};
-	});
 	$(document).ready(function() {
-		$('h4:contains("before")').closest('li').each(function() {
+		$('h4:contains("Before")').closest('li').each(function() {
 			var width = $(this).find('img').data('dimensions').split('x')[0];
 			$(this).next().andSelf().wrapAll('<li class="before-after" style="width:' + width + 'px"><div class="twentytwenty-container"></div></li>');
 		});
