@@ -13,28 +13,29 @@
 		opacity: 1;
 		font-size: 11px;
 		line-height: 18px; }
-		
-/* Custom tiles text */	
+
+/* Custom tiles text */
 	#intro-tiles {
 		float: left;
 		width: 400px;
 		padding: 40px 0; }
 	.left #intro-tiles + h2 + div.tile {
 		padding-left: 420px; }
-		
+
 </style>
 <script>
 
 $(document).ready(function() {
 
 /* Custom sideways-scrolling text */
-	$('.sidescroll li:first-child .description').closest('li').addClass('text');
-	
+	var $listItem = $('.sidescroll img[src*="/blank-"]').closest('li');
+	$listItem.addClass('text');
+
 /* Custom tiles layout text */
 	var $first = $('.tile li:first-child .description').closest('li');
 	var $intro = $first.find('.description');
 	$intro.prependTo('#content').attr('id', 'intro-tiles');
-	$first.remove();		
+	$first.remove();
 
 });
 
