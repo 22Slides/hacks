@@ -7,7 +7,7 @@ Place link in images' description
 	$(document).ready(function() {
 		$('.grid a, .tile a, .block a').each(function() {
 			var description = $(this).find('.description').text().trim();
-			if (description.match(/^\s*http:\/\/(.*)$/)) {
+			if (description.match(/^\s*http:\/\/(.*)$/) || description.match(/\/(.+)$/)) {
 				$(this).addClass('custom').attr('href', description);
 			}
 		});
