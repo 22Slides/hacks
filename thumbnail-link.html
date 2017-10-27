@@ -13,3 +13,16 @@ Place link in images' description
 		});
 	});
 </script>
+
+<!-- Mobile Verision -->
+<script>
+	$(document).ready(function() {
+		$('.images li').each(function() {
+			var description = $(this).find('.description').text().trim();
+			if (description.match(/^\s*http:\/\/(.*)$/) || description.match(/^\s*\/(.*)$/)) {
+				$(this).children('div').remove();
+				$(this).wrapInner('<a href="/m/' + description + '"></a>');
+			}
+		});
+	});
+</script>
