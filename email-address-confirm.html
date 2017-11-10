@@ -5,8 +5,6 @@
 		var value1 = $label.find('input').val();
 		var value2 = $label.next().find('input[type="text"]').val();
 		if (value1 != value2) {
-			alert(value1);
-			alert(value2);
 			event.preventDefault();
 			alert('Your email fields don\'t match. Please double check your email address');
 		}
