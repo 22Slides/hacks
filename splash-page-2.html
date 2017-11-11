@@ -32,7 +32,7 @@
 <script>
 	$(document).ready(function() {
 		var $splash = $('#splash');
-		if (!Cookies.get('splashPage')) $splash.show();
+		if (page === "index" && !Cookies.get('splashPage')) $splash.show();
 		$splash.find('a').click(function(event) {
 			event.preventDefault();
 			var splashFrequency = 5; // Minutes
