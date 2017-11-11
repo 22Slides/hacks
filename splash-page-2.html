@@ -1,0 +1,43 @@
+<!-- Splash Page: Head -->
+<style>
+	#splash {
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #080808;
+		display: none; }
+	#splash a {
+		display: block;
+		width: 800px;
+		opacity: .9;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); }
+	#splash a:hover { opacity: 1; }
+	#splash img {
+		display: block;
+		width: 100%;
+		height: auto; }
+</style>
+
+<!-- Splash Page: Body -->
+<div id="splash">
+	<a href="#"><img src="http://m3.22slides.com/frankielopes/frankieneon3-2232021.jpg" alt="Frankie Lopes"></a>
+</div>
+<script src="//assets.22slides.com/js-cookie/src/js.cookie.js"></script>
+<script>
+	$(document).ready(function() {
+		var $splash = $('#splash');
+		if (!Cookies.get('splashPage')) $splash.show();
+		$splash.find('a').click(function(event) {
+			event.preventDefault();
+			var splashFrequency = 5; // Minutes
+			Cookies.set('splashPage', 1, { expires: splashFrequency / 60 / 24 });
+			$splash.fadeOut(500);
+		});
+	});
+</script>
