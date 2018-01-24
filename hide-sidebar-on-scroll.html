@@ -1,0 +1,17 @@
+<!-- Hide sidebar when scrolling through horizontal galleries -->
+<script>
+	if ($('.sidescroll').length > 0) {
+		var $sidebar = $('header');
+		var $footer = $('footer');
+		var sidebarWidth = $sidebar.width();
+		$('html,body').mousewheel(function(event, deltax, deltay) {
+			if (deltax < 0) {
+				$sidebar.css({ left: -sidebarWidth + 'px' });
+				$footer.css({ left: -sidebarWidth + 'px' });
+			} else {
+				$sidebar.css({ left: 0 });
+				$footer.css({ left: 0 });
+			}
+		});
+	}
+</script>
