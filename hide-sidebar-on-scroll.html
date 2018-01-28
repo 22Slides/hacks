@@ -4,11 +4,12 @@
 		var $sidebar = $('header');
 		var $footer = $('footer');
 		var sidebarWidth = $sidebar.width();
+		var tolerance = 1;
 		$('html,body').mousewheel(function(event, deltax, deltay) {
-			if (deltax < 0) {
+			if (deltax < 0 - tolerance) {
 				$sidebar.css({ left: -sidebarWidth + 'px' });
 				$footer.css({ left: -sidebarWidth + 'px' });
-			} else {
+			} else if (deltax > 0 + tolerance) {
 				$sidebar.css({ left: 0 });
 				$footer.css({ left: 0 });
 			}
