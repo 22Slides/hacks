@@ -39,12 +39,7 @@
 				$slideshow.css({ height: height + 'px' });
 				$slideshow.children(':first').fadeIn(parameters.transition);
 				setInterval(function() {
-					$slideshow.children('*:first')
-					.fadeOut(parameters.transition)
-					.next()
-					.fadeIn(parameters.transition)
-					.end()
-					.appendTo($slideshow);
+					$slideshow.children('*:first').fadeOut(parameters.transition).next().fadeIn(parameters.transition).end().appendTo($slideshow);
 				}, parameters.pause);
 			});
 
