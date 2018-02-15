@@ -1,0 +1,49 @@
+<style>
+	#custom-slideshow {
+		position: relative;
+	}
+	#custom-slideshow > * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+</style>
+
+<div id="custom-slideshow">
+	<img src="http://m3.22slides.com/raveaupsychology/screen-shot-2018-02-11-at-80953-am-142127-small.png">
+	<img src="http://m4.22slides.com/raveaupsychology/screen-shot-2018-02-10-at-112031-pm-142123-small.png">
+	<img src="http://m5.22slides.com/raveaupsychology/screen-shot-2018-02-10-at-112043-pm-142124-small.png">
+	<img src="http://m3.22slides.com/raveaupsychology/screen-shot-2018-02-13-at-110134-pm-142214-small.png">
+	<img src="http://m5.22slides.com/raveaupsychology/screen-shot-2018-02-12-at-95114-pm-142173-small.png">
+	<img src="http://m5.22slides.com/raveaupsychology/screen-shot-2018-02-10-at-112054-pm-142125-small.png">
+</div>
+
+<script>
+
+/* Custom Slideshow */
+	function customSlideshow(parameters) {
+		parameters = parameters || {};
+		var defaults = {
+			element: '#custom-slideshow',
+			pause: 3000,
+			transition: 1000
+		};
+		parameters = $.extend(defaults, parameters);
+		var $slideshow = $(parameters.element);
+		$slideshow.children('*:gt(0)').hide();
+		setInterval(function() {
+			console.log('slide changing');
+			$slideshow.children('*:first')
+			.fadeOut(parameters.transition)
+			.next()
+			.fadeIn(parameters.transition)
+			.end()
+			.appendTo($slideshow);
+		}, parameters.pause);
+	}
+	$(document).ready(function() {
+		customSlideshow();
+	});
+
+</script>
