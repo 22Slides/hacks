@@ -1,0 +1,50 @@
+<form class="contact_form event widget" action="/contact-custom" method="post">
+	<input type="text" name="email" class="email">
+	<input type="hidden" name="message[subject]" value="Shoot Inquiry">
+	<label class="label-name">
+		<em>Bride Full Name</em>
+		<input type="text" name="message[brides-full-name]" size="35">
+	</label>
+	<label class="label-name">
+		<em>Groom Full Name</em>
+		<input type="text" name="message[grooms-full-name]" size="35">
+	</label>
+	<label class="label-email">
+		<em>Email *</em>
+		<input type="email" name="message[email]" autocapitalize="off" size="35" required="">
+	</label>
+	<label class="label-phone">
+		<em>Phone *</em>
+		<input type="text" name="message[phone]" size="35" required="">
+	</label>
+	<label class="label-instagram">
+		<em>Instagram Handles</em>
+		<input type="text" name="message[instagram-handles]" size="35">
+	</label>
+	<label class="label-event-type">
+		<em>Type of Event *</em>
+		<input type="text" name="message[event-type]" size="35" required="">
+	</label>
+	<label class="label-date">
+		<em>When *</em>
+		<input type="text" name="message[date]" size="35" required="">
+	</label>
+	<label class="label-where">
+		<em>Where *</em>
+		<input type="text" name="message[location]" size="35" required="">
+	</label>
+	<label class="label-travel">
+		<em>If I could travel anywhere, it would be...</em>
+		<input type="text" name="message[travel-aspirations]" size="35">
+	</label>
+	<label class="label-saturday">
+		<em>You can find us on a Saturday night...</em>
+		<input type="text" name="message[saturday-activities]" size="35">
+	</label>
+	<label class="label-message">
+		<em>Tell me all about yourselves! How did the proposal go down? What do you enjoy doing together most? Favorite food? Favorite outdoor activity? I want to hear it all. Questions? Ask away!</em>
+		<textarea cols="50" rows="10" name="message[message]"></textarea>
+	</label>
+	<br>
+	<input type="submit" value="Send Message">
+</form>
