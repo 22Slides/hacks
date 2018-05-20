@@ -1,3 +1,20 @@
+<style>
+
+/* Custom Form */
+	#content .contact_form.event label {
+		width: 50%;
+		padding-right: 25px;
+		padding-bottom: 20px;
+		box-sizing: border-box; }
+	#content .contact_form.event .label-message { width: 100%; }
+	#content .contact_form.event .label-message textarea { width: 100%; }
+	#content .contact_form.event input,
+	#content .contact_form.event textarea {
+		box-sizing: border-box; }
+
+</style>
+
+
 <form class="contact_form event widget" action="/contact-custom" method="post">
 	<input type="text" name="email" class="email">
 	<input type="hidden" name="message[subject]" value="Shoot Inquiry">
