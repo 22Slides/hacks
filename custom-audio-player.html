@@ -1,0 +1,75 @@
+
+<style>
+/* Audio Player (Custom Code > Head) */
+	.audioplayer {
+		color: #000;
+		background: #efefef; }
+	.audioplayer {
+		float: left;
+		line-height: 50px;
+		width: 500px; }
+	.audioplayer audio { display: none; }
+	.audioplayer a { color: inherit; }
+	.audioplayer .playpause {
+		float: left;
+		width: 50px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 1.5em;
+		display: none; }
+	.audioplayer .title {
+		float: left;
+		border-left: 1px solid rgba(0,0,0, .1);
+		padding-left: 20px; }
+	.audioplayer .time {
+		float: right;
+		padding-right: 20px;
+		font-size: .8em; }
+</style>
+
+<!-- Audio Player (HTML) -->
+<div class="audioplayer">
+	<audio><source src="/custom/sound.mp3" type="audio/mp3"></audio>
+	<a class="playpause play" href="#">&#9658;</a>
+	<a class="playpause pause" href="#">&#10073;&#10073;</a>
+	<span class="title">Sound Natural (excerpt)</span>
+	<span class="time">00:00</span>
+</div>
+
+
+<script>
+/* Audio Player (Custom Code > Body) */
+	function _22_audioPlayer() {
+		var $player = $('.audioplayer audio');
+		function str_pad_left(string,pad,length) { return (new Array(length+1).join(pad)+string).slice(-length); }
+		var autoPlay = $player.attr('autoplay');
+		if (typeof autoPlay !== typeof undefined && autoPlay !== false) {
+			$player[0].play();
+			$('.audioplayer .pause').show();
+		} else {
+			$('.audioplayer .play').show();
+		}
+		$('.audioplayer .pause').click(function(e) {
+			e.preventDefault();
+			$(this).hide();
+			$('.audioplayer .play').show();
+			$player[0].pause();
+		});
+		$('.audioplayer .play').click(function(e) {
+			e.preventDefault();
+			$(this).hide();
+			$('.audioplayer .pause').show();
+			$player[0].play();
+		});
+		setInterval(function() {
+			var time = Math.round($player[0].currentTime);
+			var minutes = Math.floor(time/60);
+			var seconds = time - minutes * 60;
+			var time = str_pad_left(minutes,'0',2)+':'+str_pad_left(seconds,'0',2);
+			$('.audioplayer .time').text(time);
+		}, 1000);
+	}
+	$(function() {
+		_22_audioPlayer();
+	});
+</script>
