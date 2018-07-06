@@ -17,3 +17,23 @@
 		});
 	});
 </script>
+
+<!-- Mobile -->
+<style>
+/* Make iframe videos in list gallery text blurbs responsive */
+	.video_wrapper { position: relative; margin-bottom: 40px; }
+	.ratio { display: block; width: 100%; height: auto; visibility: hidden;}
+	.gallery-text iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+	#content .images > li.video { max-width: 100%; }
+</style>
+<script>
+/* Make iframe videos in list gallery text blurbs responsive */
+	$(document).ready(function() {
+		$('.gallery-text iframe').each(function() {
+			var $this = $(this);
+			var dimensions = $this.attr('width') + "x" + $this.attr('height');
+			$this.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="http://placehold.it/' + dimensions + '">');
+			$this.closest('li').addClass('video');
+		});
+	});
+</script>
