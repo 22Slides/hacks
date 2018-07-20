@@ -1,0 +1,25 @@
+<!-- Image counter (x/xx) -->
+<style>
+	.images .counter {
+		font-family: "Courier New";
+		font-size: 1.1em;
+		font-style: normal;
+		display: block;
+		margin: 20px 0 0; }
+</style>
+<script>
+/* Image counter */
+	$(function() {
+		$('ul.images').each(function() {
+			var $this = $(this);
+			var images = $this.find('.gallery-image');
+			var totalImages = images.length;
+			images.each(function() {
+				var $this = $(this);
+				var number = $this.prevAll('.gallery-image').length + 1;
+				var text = number + " / " + totalImages;
+				$this.find('.image-description-container').prepend('<em class="counter">' + text + '</em>');
+			});
+		});
+	});
+</script>
