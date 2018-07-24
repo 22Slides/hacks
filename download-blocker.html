@@ -1,0 +1,7 @@
+<!-- Stop drag/drop + right-click (Place is 'body' code field) -->
+<script>
+	$(function() {
+		$('body').on('dragstart', function(e) { e.preventDefault(); })
+		$('body').on('contextmenu', function(e) { e.preventDefault(); })
+	});
+</script>
