@@ -1,20 +1,25 @@
 <!-- Before/After Slider (Must use vertical-scrolling gallery layout) -->
-<script src="http://assets.22slides.com/custom/twentytwenty/js/jquery.event.move.js"></script>
-<script src="http://assets.22slides.com/custom/twentytwenty/js/jquery.twentytwenty.js"></script>
-<link href="http://assets.22slides.com/custom/twentytwenty/css/twentytwenty.css" rel="stylesheet">
+<script src="//s3.amazonaws.com/22slides-assets/custom/twentytwenty/js/jquery.event.move.js"></script>
+<script src="//s3.amazonaws.com/22slides-assets/custom/twentytwenty/js/jquery.twentytwenty.js"></script>
+<link href="//s3.amazonaws.com/22slides-assets/custom/twentytwenty/css/twentytwenty.css" rel="stylesheet">
 <style>
 	.twentytwenty-container li { position: static !important; }
 	li.before-after {  }
 	body.left #content .list { max-width: 1300px; }
 	.list .images li { width: 100% !important; }
+	.twentytwenty-before-label, .twentytwenty-after-label, .twentytwenty-overlay { width: auto; }
 </style>
 <script>
-	$(document).ready(function() {
+	function beforeAndAfter() {
 		$('h4:contains("Before")').closest('li').each(function() {
-			var width = $(this).find('img').data('dimensions').split('x')[0];
-			$(this).next().andSelf().wrapAll('<li class="before-after" style="width:' + width + 'px"><div class="twentytwenty-container"></div></li>');
+			var $this = $(this);
+			var width = $this.find('img').data('dimensions').split('x')[0];
+			$this.next().addBack().wrapAll('<li class="before-after" style="width:'+width+'px"><div class="twentytwenty-container"></div></li>');
 		});
-		$('.twentytwenty-container').find('li div, .rsn_share').remove();
-		$('.twentytwenty-container').twentytwenty();
-	});
+		var $containers = $('.twentytwenty-container');
+		$containers.find('.image-description-container, .rsn_share, .blocker').remove();
+		$containers.find('img').unwrap().unwrap();
+		$containers.twentytwenty();
+	}
+	$(window).on('load', beforeAndAfter);
 </script>
