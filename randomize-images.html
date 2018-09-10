@@ -1,19 +1,19 @@
 <!-- Randomize Images -->
 <script>
-	var randomizePage = "commercial";
+	var randomizePage = "2009-current";
 	(function($) {
 	$.fn.randomize = function(childElem) {
 	  return this.each(function() {
 		  var $this = $(this);
 		  var elems = $this.children(childElem);
-		  elems.sort(function() { return (Math.round(Math.random())-0.5); });  
-		  $this.detach(childElem);  
+		  elems.sort(function() { return (Math.round(Math.random())-0.5); });
+		  $this.detach(childElem);
 		  for(var i=0; i < elems.length; i++) $this.append(elems[i]);
-	  });    
+	  });
 	}
 	})(jQuery);
-	$(document).ready(function() {
+	$(function() {
 		var elementToRandomize = ($('.thumbs').length > 0 ? ".thumbs" : ".images");
-		$('#page-' + randomizePage + ' .thumbs').randomize('li');
+		$('#page-' + randomizePage + ' ' + elementToRandomize).randomize('li');
 	});
 </script>
