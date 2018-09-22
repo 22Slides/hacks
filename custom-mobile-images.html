@@ -1,0 +1,15 @@
+<!-- Custom mobile home page images -->
+<script>
+	$(function() {
+		var imagePage = "mobile-home";
+		var $billboard = $('#billboard');
+		$billboard.empty();
+		var $temp = $('<div></div>');
+		$temp.load('/' + imagePage + 'ul.images', function() {
+			var images = $temp.find('img');
+			var random = Math.floor(Math.random() * images.length);
+			var image = images[random];
+			$('#billboard').append(image);
+		});
+	});
+</script>
