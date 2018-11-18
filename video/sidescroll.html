@@ -36,6 +36,7 @@
 			var height = $video.attr('height');
 			var newWidth = Math.round(newHeight * width / height);
 			var dimensions = newWidth + "x" + newHeight;
+			$video.attr({ width: newWidth, height: newHeight });
 			$this.prepend('<img class="ratio" src="http://placehold.it/' + dimensions + '" data-dimensions="' + dimensions + '">');
 		});
 		$('.images').hide();
@@ -77,6 +78,7 @@
 			var height = $video.attr('height');
 			var newWidth = Math.round(newHeight * width / height);
 			var dimensions = newWidth + "x" + newHeight;
+			$video.attr({ width: newWidth, height: newHeight });
 			$this.prepend('<img class="ratio" src="http://placehold.it/' + dimensions + '" data-dimensions="' + dimensions + '">');
 		});
 		$('.images').hide();
