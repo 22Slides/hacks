@@ -1,0 +1,12 @@
+<style>
+	#content .contact_form label > em { display: none; }
+</style>
+<script>
+	$(function() {
+		$('.contact_form').find('input, textarea').each(function() {
+			var $this = $(this);
+			var placeholder = $this.siblings('em').text();
+			$this.attr({ placeholder: placeholder });
+		});
+	});
+</script>

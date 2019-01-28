@@ -1,0 +1,11 @@
+<script>
+/* Custom home page links */
+	$('.gallery-image-thumb > a').each(function() {
+		var $this = $(this);
+		var description = $this.find('.description').text().trim();
+		if (description.match(/^(http)|(\/)/)) {
+			$this.addClass('custom');
+			$this.attr('href', description);
+		}
+	});
+</script>
