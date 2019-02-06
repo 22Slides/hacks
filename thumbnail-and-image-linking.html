@@ -1,0 +1,40 @@
+<!--
+Point image thumbnail to another page
+Paste into your "body" field
+Place link in images' description
+-->
+<script>
+	$(function() {
+		/* Thumbnails */
+		$('.grid a, .tile a, .blocks a').each(function() {
+			var $this = $(this);
+			var description = $this.find('.description').text().trim();
+			if (description.match(/^(http)|(\/)/)) {
+				$this.addClass('custom').attr('href', description);
+			}
+		});
+		/* Vertical & Horizontal-scrolling galleries */
+		$('.images .gallery-image').each(function() {
+			var $this = $(this);
+			var description = $this.find('.description').text().trim();
+			if (description.match(/^(http)|(\/)/)) {
+				$this.find('.image img').wrap('<a href="' + description + '"></a>');
+				$this.find('.description').remove();
+			}
+		});
+	});
+</script>
+
+<!-- Mobile Verision -->
+<script>
+	$(document).ready(function() {
+		$('.images li').each(function() {
+			var $this = $(this);
+			var description = $this.find('.description').text().trim();
+			if (description.match(/^(http)|(\/)/)) {
+				$this.children('div').remove();
+				$this.wrapInner('<a href="/m/' + description + '"></a>');
+			}
+		});
+	});
+</script>
