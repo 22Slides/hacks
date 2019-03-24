@@ -4,14 +4,15 @@ Full-Screen Home Page Video
 - Replace the value of "var embed" with your embed code
 -->
 <script>
-	$(document).ready(function() {
-		var embed = '<iframe width="560" height="315" src="https://www.youtube.com/embed/a5vTA4L_PB4?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>';
+	$(function() {
+		var embed = '<iframe src="https://player.vimeo.com/video/320296266?autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 		var video = new Object;
 		video.iframe = $(embed);
 		video.width = video.iframe.attr('width');
 		video.height = video.iframe.attr('height');
 		video.aspectRatio = video.width / video.height;
 		var $billboard = $('#billboard');
+		$billboard.css({ 'overflow': 'hidden' });
 		$billboard.hide().find('img').remove();
 		$billboard.append(video.iframe);
 		function resizeHomeVideo(video) {
@@ -22,7 +23,7 @@ Full-Screen Home Page Video
 				newWidth = windowWidth;
 				newHeight = windowWidth / video.aspectRatio;
 				newLeft = 0;
-				newTop = (newHeight - windowHeight) / -2; 
+				newTop = (newHeight - windowHeight) / -2;
 			} else {
 				var newHeight = windowHeight;
 				var newWidth = idealWidth;
