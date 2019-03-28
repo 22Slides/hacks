@@ -1,0 +1,17 @@
+<!-- Confirm email address -->
+<script>
+$(function() {
+	$('.contact_form').submit(function(e) {
+		var $this = $(this);
+		var $valueInput = $this.find('em:contains("Your Email *")').siblings('input');
+		var $confirmInput = $this.find('em:contains("Confirm Email *")').siblings('input[type="text"]');
+		var value = $valueInput.val();
+		var confirm = $confirmInput.val();
+		if (value != confirm) {
+			alert('Your email doesn\'t match.');
+			e.preventDefault();
+			return false;
+		}
+	});
+});
+</script>
