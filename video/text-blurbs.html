@@ -1,0 +1,13 @@
+<script>
+
+/* Make iframe videos in list gallery text blurbs responsive */
+	$(function() {
+		$('.list .gallery-text iframe').each(function() {
+			var $this = $(this);
+			var dimensions = $this.attr('width') + "x" + $this.attr('height');
+			$this.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="https://via.placeholder.com/' + dimensions + '">');
+			$this.closest('li').addClass('video');
+		});
+	});
+
+</script>
