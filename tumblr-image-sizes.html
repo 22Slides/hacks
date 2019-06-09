@@ -1,0 +1,14 @@
+<style>
+	#posts .body img { display: none; }
+</style>
+<script>
+	$(function() {
+		$('#posts .body img').each(function() {
+			var $this = $(this);
+			var src = $this.attr('src');
+			var src = src.replace(/_540\./, '_1280.');
+			$this.attr({ src: src});
+			$this.show();
+		});
+	});
+</script>
