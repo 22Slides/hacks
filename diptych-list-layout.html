@@ -1,0 +1,34 @@
+<!-- Head -->
+<style>
+/* Reset default portrait-oriented images's styling */
+	.list .loading { display: none; }
+	.list .images {
+		max-width: 1000px;
+		margin: 0 auto; }
+	.list .images img {
+		display: block; }
+	#content .list .images > li {
+		max-width: none;
+		clear: left; }
+	.list .images img.orientation-portrait {
+		height: auto;
+		max-width: 100%; }
+/* Style Pairs */
+	.list .images > .portrait-pair {
+		float: left;
+		width: 50%; }
+	#content .list .images > .portrait-pair + .portrait-pair--second { clear: none; }
+</style>
+<!-- Body -->
+<script>
+	$(function() {
+		$('.list .gallery-image.orientation-portrait').each(function() {
+			let $this = $(this);
+			if (!$this.hasClass('portrait-pair')) {
+				let $nextPortrait = $this.next('.orientation-portrait');
+				if ($nextPortrait.length) $nextPortrait.addClass('portrait-pair--second').add(this).addClass('portrait-pair');
+			}
+		});
+		$('.list').removeClass('loading');
+	});
+</script>
