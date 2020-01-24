@@ -6,14 +6,15 @@
 			return filename.split('/').pop().replace(/\-\d+\..+$/, '');
 		}
 		$.each(pages, function(index, value) {
-			$('#page-' + value).find('.tile, .grid, .blocks').find('.thumbs > li > a').each(function() {
+			var selector = (value === "all" ? "body" : "#page-" + value);
+			$(selector).find('.tile, .grid, .blocks').find('.thumbs > li > a').each(function() {
 				var $this = $(this);
 				if (!$this.find('h4').length) {
 					var filename = returnFileName($this.attr('href'));
 					$this.append('<h4>' + filename + '</h4>');
 				}
 			});
-			$('#page-' + value).find('.images > li').each(function() {
+			$(selector).find('.images > li').each(function() {
 				var $this = $(this);
 				if (!$this.find('.image-description-container').length) {
 					var filename = returnFileName($this.find('img').attr('src'));
@@ -23,10 +24,7 @@
 		});
 	}
 	$(document).ready(function() {
-		_22_filenameToTitle([
-			'head-shots-goodell',
-			'headshots-outtakes'
-		]);
+		_22_filenameToTitle(['all']);
 	});
 
 </script>
