@@ -1,0 +1,37 @@
+
+<script>
+
+	$(function() {
+
+		// Expand/Collapse
+		$('nav .accordion').hover(function() {
+
+			var $this = $(this);
+			var $menu = $this.find('ul');
+			var animationSpeed = 150;
+
+			// Open menu
+			$menu.slideDown('fast', function() {
+				$menu.animate({ opacity: 1 }, animationSpeed);
+				rsn.computedStyles.prototype.responsiveSidebar();
+			});
+			$menu.addClass('expanded');
+
+		}, function() {
+
+			var $this = $(this);
+			var $menu = $this.find('ul');
+			var animationSpeed = 150;
+
+			// Close this menu
+			$menu.animate({ opacity: 0 }, animationSpeed, function() {
+				$(this).slideUp('fast', function() {
+					$(this).removeClass('expanded').removeClass('expanded-onload');
+				});
+			});
+
+		});
+
+	});
+
+</script>
