@@ -1,11 +1,29 @@
+<!-- Desktop -->
 <script>
 /* Custom home page links */
-	$('.gallery-image-thumb > a').each(function() {
-		var $this = $(this);
-		var description = $this.find('.description').text().trim();
-		if (description.match(/^(http)|(\/)/)) {
-			$this.addClass('custom');
-			$this.attr('href', description);
-		}
+	$(function() {
+		$('.gallery-image-thumb > a').each(function() {
+			var $this = $(this);
+			var description = $this.find('.description').text().trim();
+			if (description.match(/^(http)|(\/)/)) {
+				$this.addClass('custom');
+				$this.attr('href', description);
+			}
+		});
+	});
+</script>
+
+<!-- Mobile -->
+<script>
+/* Custom thumbnail links */
+	$(function() {
+		$('.gallery-image').each(function() {
+			var $this = $(this);
+			var description = $this.find('.description').text().trim();
+			if (description.match(/^(http)|(\/)/)) {
+				$this.wrapInner('<a href="' + description + '" target="_blank"></a>');
+				$this.find('.description').remove();
+			}
+		});
 	});
 </script>
