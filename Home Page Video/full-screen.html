@@ -4,8 +4,7 @@ Full-Screen Home Page Video
 - Replace the value of "var embed" with your embed code
 -->
 <script>
-	$(function() {
-		var embed = '<iframe src="https://player.vimeo.com/video/320296266?autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+	function customHomeVideo(embed) {
 		var video = new Object;
 		video.iframe = $(embed);
 		video.width = video.iframe.attr('width');
@@ -35,5 +34,8 @@ Full-Screen Home Page Video
 		resizeHomeVideo(video);
 		$(window).resize(function() { resizeHomeVideo(video) });
 		setTimeout(function() { $billboard.show(); }, 100);
+	}
+	$(function() {
+		customHomeVideo('<iframe width="560" height="315" src="https://www.youtube.com/embed/xb8tmsKiZlA?controls=0&autoplay=1&rel=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 	});
 </script>
