@@ -23,3 +23,30 @@
 	}
 	$(window).on('load', beforeAndAfter);
 </script>
+
+
+<!-- Before/After Slider (Mobile) -->
+<script src="//s3.amazonaws.com/22slides-assets/custom/twentytwenty/js/jquery.event.move.js"></script>
+<script src="//s3.amazonaws.com/22slides-assets/custom/twentytwenty/js/jquery.twentytwenty.js"></script>
+<link href="//s3.amazonaws.com/22slides-assets/custom/twentytwenty/css/twentytwenty.css" rel="stylesheet">
+<style>
+	.twentytwenty-container li { position: static !important; }
+	li.before-after { width: 100% !important; }
+	body.left #content .list { max-width: 100%; }
+	.twentytwenty-before-label, .twentytwenty-after-label, .twentytwenty-overlay { width: auto; }
+	.twentytwenty-container img { height: auto !important; }
+</style>
+<script>
+	function beforeAndAfter() {
+		$('h4:contains("Before")').closest('li').each(function() {
+			var $this = $(this);
+			var width = $this.find('img').data('dimensions').split('x')[0];
+			$this.next().addBack().wrapAll('<li class="before-after" style="width:'+width+'px"><div class="twentytwenty-container"></div></li>');
+		});
+		var $containers = $('.twentytwenty-container');
+		$containers.find('.image-description-container, .rsn_share, .blocker').remove();
+		$containers.find('img').unwrap().unwrap();
+		$containers.twentytwenty();
+	}
+	$(window).on('load', beforeAndAfter);
+</script>
