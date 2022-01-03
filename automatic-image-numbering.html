@@ -1,10 +1,10 @@
 <script>
 /* Automatic numbering of images for client review */
-	var numberedPageName = "gallery-2";
-	$(document).ready(function() {
-		$('#page-' + numberedPageName + ' .thumbs > li > a').each(function(i) {
-			var $this = $(this);
-			var title = 'Image #' + (i + 1);
+	const numberedPageName = "gallery-2";
+	$(function() {
+		$(`#page-${numberedPageName} .thumbs > li > a`).each(function(i) {
+			const $this = $(this);
+			const title = 'Image #' + (i + 1);
 			if ($this.find('h4').length < 1) $this.append('<h4></h4>');
 			$this.find('h4').html(title);
 		});
