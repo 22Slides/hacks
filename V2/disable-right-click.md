@@ -6,6 +6,6 @@ Disabling right-click is not recommended, as it's one of the least effective way
 	custom = window.custom || {}
 	custom.actions = custom.actions || []
 	// Disable right-click
-	custom.actions.push(() => document.addEventListener('contextmenu', event => event.preventDefault() )
+	custom.actions.push(() => document.addEventListener('contextmenu', event => event.preventDefault() ))
 </script>
 ```
