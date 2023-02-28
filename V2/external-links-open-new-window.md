@@ -2,12 +2,9 @@ Makes links that point to external websites (determined by whether or not their 
 
 ```html
 <script>
-	// Create custom code arrays, if they don't already exist
+	// Make external links open in new windows
 	custom = window.custom || {}
 	custom.markup = custom.markup || []
-	// Make external links open in new windows
-	custom.markup.push(() => {
-		document.querySelectorAll('a[href^="http"]').forEach(element => element.target = "_blank")
-	})
+	custom.markup.push(() => document.querySelectorAll('a[href^="http"]').forEach(element => element.target = "_blank"))
 </script>
 ```
