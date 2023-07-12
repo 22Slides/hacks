@@ -11,7 +11,8 @@ Adds a small button the bottom-left of the screen, which enables users to enter 
 		padding: 5px;
 		color: inherit;
 		background: transparent;
-		font-size: .8em;
+		font-size: .6em;
+		z-index: 5;
 	}
 </style>
 <script>
