@@ -1,0 +1,10 @@
+<script>
+	/* Show a message if the user is using the Facebook app's in-app browser */
+	const isFacebookApp = () => {
+		const ua = navigator.userAgent || navigator.vendor || window.opera
+		return (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1)
+	}
+	if (page === "store" && isFacebookApp()) {
+		alert(`Please open this page with your device's native browser, as Facebook's in-app browser does not support the use of PayPal for payments.`)
+	}
+</script>
