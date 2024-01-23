@@ -4,8 +4,9 @@
 	$(function() {
 		$('.list .gallery-text iframe').each(function() {
 			var $this = $(this);
-			var dimensions = $this.attr('width') + "x" + $this.attr('height');
-			$this.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="https://via.placeholder.com/' + dimensions + '">');
+			var width = $this.attr('width');
+			var height = $this.attr('height');
+			$this.wrap('<div class="video_wrapper"></div>').after(`https://22slides1.imgix.net/blank.png?w=${width}&h=${height}&fit=crop`);
 			$this.closest('li').addClass('video');
 		});
 	});

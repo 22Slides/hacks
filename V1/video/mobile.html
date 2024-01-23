@@ -31,8 +31,9 @@
 			$this.find('img').remove();
 			$this.find('iframe').prependTo($this);
 			$this.find('div iframe').remove();
-			var dimensions = $video.attr('width') + "x" + $video.attr('height');
-			$video.wrap('<div class="video_wrapper"></div>').after('<img class="ratio" src="http://placehold.it/' + dimensions + '">');
+			var width = $video.attr('width');
+			var height = $video.attr('height');
+			$video.wrap('<div class="video_wrapper"></div>').after(`https://22slides1.imgix.net/blank.png?w=${width}&h=${height}&fit=crop`);
 		});
 		$('.images').hide();
 		setTimeout(function() { $('.images').show(); }, 100);
