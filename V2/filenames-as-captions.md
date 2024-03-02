@@ -1,4 +1,4 @@
-Adds images' filenames as captions. Useful for makeshift proofing setups.
+Adds images' filenames as captions. Useful for makeshift proofing setups. To enable this for a gallery, first paste this code into your "custom code" field, then add the caption "proofing" to the a gallery's first image's caption.
 
 ```html
 <script>
