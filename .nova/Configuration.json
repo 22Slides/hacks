@@ -1,0 +1,15 @@
+{
+  "eablokker.tabsSidebar.config.collapsedFolders" : [
+
+  ],
+  "eablokker.tabsSidebar.config.customKindGroupsOrder" : [
+    "plaintext",
+    "markdown"
+  ],
+  "eablokker.tabsSidebar.config.customTabOrder" : [
+    "file:\/\/\/Users\/bryanbuchanan\/git\/22Slides\/hacks\/.gitignore",
+    "file:\/\/\/Users\/bryanbuchanan\/git\/22Slides\/hacks\/V2\/inverted-home-colors.md",
+    "file:\/\/\/Users\/bryanbuchanan\/git\/22Slides\/hacks\/V2\/stack-diptychs-on-mobile.md",
+    "file:\/\/\/Users\/bryanbuchanan\/git\/22Slides\/hacks\/README.md"
+  ]
+}
