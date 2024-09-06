@@ -1,9 +1,5 @@
 <script>
 	
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
-	custom.actions = custom.actions || []
-	
 	custom.markup.push(() => {
 	
 		// Inject PayPal script

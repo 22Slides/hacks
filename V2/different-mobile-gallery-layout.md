@@ -2,8 +2,6 @@ Defines a different gallery layout for a given section on mobile devices.
 
 ```html
 <script>
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	custom.markup.push(() => {
 		const from = "cobblestone"
 		const to = "stack"

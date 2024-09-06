@@ -2,8 +2,6 @@
 
 ```html
 <script>
-	custom = window.custom || {}
-	custom.actions = custom.actions || []
 	custom.actions.push(() => {
 		// Define lightbox thumbnails
 		const targets = [

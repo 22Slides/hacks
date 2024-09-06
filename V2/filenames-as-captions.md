@@ -2,8 +2,6 @@ Adds images' filenames as captions. Useful for makeshift proofing setups. To ena
 
 ```html
 <script>
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	custom.markup.push(() => {
 		const elements = Array.from(document.querySelectorAll('figcaption')).filter(el => el.innerText.toLowerCase() === 'proofing')
 		elements.forEach(caption => {

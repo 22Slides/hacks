@@ -10,8 +10,6 @@ Adds a "top of page" link to breadcrumbs sections.
 </style>
 <script>
 	// Add "top of page" button to breadcrumbs widget
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	custom.markup.push(() => {
 		document.querySelectorAll('.breadcrumbs__container').forEach(breadcrumbs => {
 			if (breadcrumbs.querySelector('.breadcrumbs__top')) return

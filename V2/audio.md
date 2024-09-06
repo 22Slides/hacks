@@ -3,8 +3,6 @@ Adds an invisible audio player to a single page. Please keep in mind that some w
 ```html
 <script>
 	// Adds audio to a specific page
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	custom.markup.push(() => {
 		const page = document.querySelector('#page-name')
 		if (page) {

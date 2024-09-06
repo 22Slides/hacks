@@ -17,8 +17,6 @@ Adds images' filenames as captions. Useful for makeshift proofing setups. To ena
 	}
 </style>
 <script>
-	window.custom = window.custom || {}
-	window.custom.styles = window.custom.styles || []
 	window.custom.styles.push(() => {
 		return new Promise(resolve => {
 			const items = [

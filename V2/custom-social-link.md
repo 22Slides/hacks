@@ -2,8 +2,6 @@ Adds a custom social link to a site's header/footer.
 
 ```html
 <script>
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	custom.markup.push(() => {
 		const link = `https://google.com`
 		const title = `Zalo`

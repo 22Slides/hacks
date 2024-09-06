@@ -2,8 +2,6 @@ Randomizes the order of the images in the sections defined by the "randomSection
 
 ```html
 <script>
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	custom.markup.push(() => {
 		const randomSections = ["6632c559e4f4be5324d6b7a9"]
 		randomSections.forEach(sectionId => {

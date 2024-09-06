@@ -16,8 +16,6 @@ Adds a small button the bottom-left of the screen, which enables users to enter 
 	}
 </style>
 <script>
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	custom.markup.push(() => {
 		const fullscreen = document.createElement('button')
 		fullscreen.classList.add('fullscreen')

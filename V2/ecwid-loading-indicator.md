@@ -7,8 +7,6 @@ Adds a loading indicator to Ecwid widgets
 	}
 </style>
 <script>
-	custom = window.custom || {}
-	custom.styles = custom.styles || []
 	custom.styles.push(() => {
 		const className = 'custom-loading'
 		const widget = document.querySelector(`.${className}`)

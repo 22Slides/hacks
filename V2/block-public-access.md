@@ -5,9 +5,6 @@ Useful for blocking casual public access, but may not stop advanced users or bot
 ```html
 <script>
 	const placeholder = true
-	// Create custom code arrays, if they don't already exist
-	custom = window.custom || {}
-	custom.markup = custom.markup || []
 	// Block site
 	custom.markup.push(() => {
 		if (window === window.parent && placeholder) {
