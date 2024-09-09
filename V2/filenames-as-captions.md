@@ -9,7 +9,8 @@ Adds images' filenames as captions. Useful for makeshift proofing setups. To ena
 			if (gallery) {
 				gallery.querySelectorAll('.gallery__item').forEach(item => {
 					item.querySelector('.gallery__caption')?.remove()
-					const filename = item.querySelector('img').src.split('/').pop().split('.')[0]
+					let filename = item.querySelector('img').src.split('/').pop().split('.')[0]
+					filename = filename.replace(/-\d{3}$/, '')
 					const caption = document.createElement('figcaption')
 					caption.classList.add('gallery__caption')
 					caption.textContent = filename
